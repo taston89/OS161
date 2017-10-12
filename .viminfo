@@ -21,12 +21,34 @@
 # Registers:
 
 # File marks:
-'0  1  0  ~/os161/configure
+'0  68  0  ~/README
+'1  1  0  ~/README
+'2  1  0  ~/Re
+'3  1  0  ~/os161/configure
 
 # Jumplist (newest first):
+-'  68  0  ~/README
+-'  1  0  ~/README
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
 -'  1  0  ~/os161/configure
 
 # History of marks within files (newest to oldest):
+
+> ~/README
+	"	68	0
+
+> ~/Re
+	"	1	0
 
 > ~/os161/configure
 	"	1	0

@@ -55,3 +55,216 @@ git config --global user.email taston89@hotmail.com
 git push origin master
 git push
 git status
+ls
+cd ~/os161/
+./configure --ostree=$HOME/os161/root --toolprefix=sos-
+ls
+cd kern
+cd .
+cd ..
+ls
+cd os161/
+ls
+./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
+ls
+./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
+./configure --help
+where
+cd ..
+ls
+ls -a
+rm -rf os161/ README  .README.swp sys161
+ls
+ls -a
+git clone https://github.com/starlight910/OS161.git
+ls
+cd OS161/
+ls
+ls -a
+rm -rf .git
+ls
+ls -a
+ls
+cd ..
+ls
+cd OS161/
+ls
+sys161 kernel-ASST0
+cd ..
+ls
+cd OS161/
+ls
+cd os161/
+ls
+sys161 kernel-ASST0
+ls
+cd root
+ls
+sys161 kernel-ASST0 
+cd ..
+ls
+cd ..
+ls
+cd ,,
+cd ..
+ls
+rm -rf OS161/
+ls
+git clone https://github.com/arthurdent/os161.git
+ls
+cd os161/
+ls
+./configure --ostree="$HOME/os/root" --toolprefix="sos-"
+cd kern/conf/
+./config ASST0
+bmake depend
+pmake depend
+pmake
+pmake install
+pmake install
+ls
+cd ..
+ls
+cd ..
+ls
+cd user
+ls
+cd ..
+ls
+cd usr/share/mk
+cd ..
+ls
+cd os161/
+ls
+cd kern/
+ls
+cd conf/
+l
+ls
+pmake install
+cd 
+ls
+cd os161/
+ls
+cd ..
+ls
+rm -rf
+rm -rf os161/
+ls
+ls -a
+git clone https://github.com/arthurdent/os161.git
+ls
+git clone https://github.com/taston89/OS161.git
+ls
+cd OS161/
+ls
+ls -a
+rm -rf os161/
+mv * ..
+ls
+ls -a
+cd ..
+ls
+ls
+cd OS161/
+ls
+ls -a
+mv .bash_aliases .bash_logout .bashrc .gitconfig .screenrc .vimrc .bash_history .bash_profile .git .profile .viminfo ..
+mv .bash_aliases .bash_logout .bashrc .gitconfig .screenrc .vimrc .bash_history .bash_profile .profile .viminfo ..
+..
+ls
+cd ..
+ls
+mv OS161/*(DN) .
+mv OS161/*(DN) ./
+cd OS161/
+ls
+ls -a
+cd ..
+ls
+ls -a
+rm -rf OS161/
+git add .
+git commit -m "Fresh os161"
+git push origin master
+git push origin master
+ls
+cd os161/
+./configure --ostree=$HOME/os161/root --toolprefix=sos-
+cd kern/conf/
+./config ASST0
+pmake depend
+pmake
+pmake install
+bmake install
+cd $HOME/os161
+pmake
+cd kern/conf/
+pmake install
+ls
+ls -a
+bmake depend
+make depend
+make
+pmake depend
+pmake
+pmake install
+cd 
+ftp://ftp.eecs.harvard.edu/pub/os161/
+ls
+ls -a
+ls
+rm -rf os161/ README sys161
+git clone https://github.com/starlight910/OS161.git
+ls -a
+ls
+cd OS161/
+ls
+ls -a
+mv * ..
+ls
+ls -a
+cd ..
+ls
+rm -rf OS161/
+ls
+ls -a
+cd os161/
+ls
+./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
+cd kern/conf/
+./config ASTT0
+ls
+./config ASST0
+cd ../comiple/ASTT0
+cd ../compile/ASST0/
+bmake dpend
+pmake depend
+pmake
+cd ..
+ls
+cd ..
+ls
+./config ASTT0
+./conffig ASST0
+cd conf/
+./config ASTT0
+ls
+./config ASST0
+cd ../compile/ASST0/
+pmake depend
+bmake dpend
+cd ~/os161/
+pmake
+ls
+vim README 
+ls
+cd os161/
+ls
+ls
+cd .
+cd ..
+ls
+vim Re
+ls
+vim README 
