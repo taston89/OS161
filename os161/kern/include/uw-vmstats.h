@@ -1,6 +1,8 @@
 #ifndef VM_STATS_H
 #define VM_STATS_H
 
+#include "opt-A3.h"
+#if OPT_A3
 /* UW specific code - This won't be needed or used until assignment 3 */
 
 /* belongs in kern/include/uw-vmstat.h */
@@ -10,11 +12,11 @@
 /* Tracks stats on user programs */
 
 /* NOTE !!!!!! WARNING !!!!!
- * All of the functions (except vmstats_print) whose names begin with '_'
+ * All of the functions whose names begin with '_'
  * assume that atomicity is ensured elsewhere
  * (i.e., outside of these routines) by acquiring stats_lock.
  * All of the functions whose names do not begin
- * with '_' ensure atomicity locally (except vmstats_print).
+ * with '_' ensure atomicity locally.
  *
  * Generally you will use the functions whose names
  * do not begin with '_'.
@@ -53,6 +55,8 @@ void vmstats_inc(unsigned int index);    /* uses locking */
 void _vmstats_inc(unsigned int index);   /* atomicity must be ensured elsewhere */
 
 /* Print the statistics: assumes that at least vmstats_init has been called */
-void vmstats_print(void);                    /* Does NOT use locking */
+void vmstats_print(void);                    /* uses locking */
+void _vmstats_print(void);                   /* atomicity must be ensured elsewhere */
 
+#endif /* OPT_A3 */
 #endif /* VM_STATS_H */

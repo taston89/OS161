@@ -150,7 +150,7 @@ main()
   } else {
     TEST_NEGATIVE(f1, "Opening too many files doesn't return error code");
 #ifdef USING_ERR_CODES
-    TEST_EQUAL_ONE_OF(saved_errno, EMFILE, ENFILE, "Expected one of EMFILE or ENFILE when opening too many files");
+    TEST_EQUAL(saved_errno, EMFILE, "Expected EMFILE when opening too many files");
 #endif /* USING_ERR_CODES */
   }
 

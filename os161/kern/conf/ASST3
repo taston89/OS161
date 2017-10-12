@@ -24,14 +24,13 @@ device random0 at lrandom*	# Abstract randomness device
 
 #options net			# Network stack (not supported)
 
-# UW Mod  (no longer used)
-#options vm			# Added a few stubs to get things rolling
+# UW Mod
+options vm			# Added a few stubs to get things rolling
 
 options sfs			# Always use the file system
 #options netfs			# Not until assignment 5 (if you choose it)
 
-# UW mod
-options dumbvm			# start with dumbvm still enabled
+#options dumbvm			# Use your own VM system now.
 #options synchprobs		# No longer needed/wanted after asst. 1
 
 # UW options for assignment 1 + 2 + 3

@@ -61,10 +61,8 @@ int locktest(int, char **);
 int cvtest(int, char **);
 
 #ifdef UW
-/* Another thread and synchronization test */
+/* More thread and synchronization tests */
 int uwlocktest1(int, char **);
-/* Used to test uw-vmstats */
-int uwvmstatstest(int, char **);
 #endif
 
 /* filesystem tests */

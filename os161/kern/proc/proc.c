@@ -47,29 +47,11 @@
 #include <current.h>
 #include <addrspace.h>
 #include <vnode.h>
-#include <vfs.h>
-#include <synch.h>
-#include <kern/fcntl.h>  
 
 /*
  * The process for the kernel; this holds all the kernel-only threads.
  */
 struct proc *kproc;
-
-/*
- * Mechanism for making the kernel menu thread sleep while processes are running
- */
-#ifdef UW
-/* count of the number of processes, excluding kproc */
-static unsigned int proc_count;
-/* provides mutual exclusion for proc_count */
-/* it would be better to use a lock here, but we use a semaphore because locks are not implemented in the base kernel */ 
-static struct semaphore *proc_count_mutex;
-/* used to signal the kernel menu thread when there are no processes */
-struct semaphore *no_proc_sem;   
-#endif  // UW
-
-
 
 /*
  * Create a proc structure.
@@ -99,26 +81,24 @@ proc_create(const char *name)
 	/* VFS fields */
 	proc->p_cwd = NULL;
 
-#ifdef UW
-	proc->console = NULL;
-#endif // UW
-
 	return proc;
 }
 
 /*
  * Destroy a proc structure.
+ *
+ * Note: nothing currently calls this. Your wait/exit code will
+ * probably want to do so.
  */
 void
 proc_destroy(struct proc *proc)
 {
 	/*
-         * note: some parts of the process structure, such as the address space,
-         *  are destroyed in sys_exit, before we get here
-         *
-         * note: depending on where this function is called from, curproc may not
-         * be defined because the calling thread may have already detached itself
-         * from the process.
+	 * You probably want to destroy and null out much of the
+	 * process (particularly the address space) at exit time if
+	 * your wait/exit design calls for the process structure to
+	 * hang around beyond process exit. Some wait/exit designs
+	 * do, some don't.
 	 */
 
 	KASSERT(proc != NULL);
@@ -136,8 +116,7 @@ proc_destroy(struct proc *proc)
 		proc->p_cwd = NULL;
 	}
 
-
-#ifndef UW  // in the UW version, space destruction occurs in sys_exit, not here
+	/* VM fields */
 	if (proc->p_addrspace) {
 		/*
 		 * In case p is the currently running process (which
@@ -155,36 +134,12 @@ proc_destroy(struct proc *proc)
 		as = curproc_setas(NULL);
 		as_destroy(as);
 	}
-#endif // UW
-
-#ifdef UW
-	if (proc->console) {
-	  vfs_close(proc->console);
-	}
-#endif // UW
 
 	threadarray_cleanup(&proc->p_threads);
 	spinlock_cleanup(&proc->p_lock);
 
 	kfree(proc->p_name);
 	kfree(proc);
-
-#ifdef UW
-	/* decrement the process count */
-        /* note: kproc is not included in the process count, but proc_destroy
-	   is never called on kproc (see KASSERT above), so we're OK to decrement
-	   the proc_count unconditionally here */
-	P(proc_count_mutex); 
-	KASSERT(proc_count > 0);
-	proc_count--;
-	/* signal the kernel menu thread if the process count has reached zero */
-	if (proc_count == 0) {
-	  V(no_proc_sem);
-	}
-	V(proc_count_mutex);
-#endif // UW
-	
-
 }
 
 /*
@@ -193,21 +148,13 @@ proc_destroy(struct proc *proc)
 void
 proc_bootstrap(void)
 {
-  kproc = proc_create("[kernel]");
-  if (kproc == NULL) {
-    panic("proc_create for kproc failed\n");
-  }
-#ifdef UW
-  proc_count = 0;
-  proc_count_mutex = sem_create("proc_count_mutex",1);
-  if (proc_count_mutex == NULL) {
-    panic("could not create proc_count_mutex semaphore\n");
-  }
-  no_proc_sem = sem_create("no_proc_sem",0);
-  if (no_proc_sem == NULL) {
-    panic("could not create no_proc_sem semaphore\n");
-  }
-#endif // UW 
+	kproc = proc_create("[kernel]");
+	if (kproc == NULL) {
+		panic("proc_create for kproc failed\n");
+	}
+#if OPT_A1
+	kprintf("kproc = %p\n", kproc);
+#endif
 }
 
 /*
@@ -220,56 +167,25 @@ struct proc *
 proc_create_runprogram(const char *name)
 {
 	struct proc *proc;
-	char *console_path;
 
 	proc = proc_create(name);
 	if (proc == NULL) {
 		return NULL;
 	}
 
-#ifdef UW
-	/* open the console - this should always succeed */
-	console_path = kstrdup("con:");
-	if (console_path == NULL) {
-	  panic("unable to copy console path name during process creation\n");
-	}
-	if (vfs_open(console_path,O_WRONLY,0,&(proc->console))) {
-	  panic("unable to open the console during process creation\n");
-	}
-	kfree(console_path);
-#endif // UW
-	  
 	/* VM fields */
 
 	proc->p_addrspace = NULL;
 
 	/* VFS fields */
 
-#ifdef UW
-	/* we do not need to acquire the p_lock here, the running thread should
-           have the only reference to this process */
-        /* also, acquiring the p_lock is problematic because VOP_INCREF may block */
-	if (curproc->p_cwd != NULL) {
-		VOP_INCREF(curproc->p_cwd);
-		proc->p_cwd = curproc->p_cwd;
-	}
-#else // UW
 	spinlock_acquire(&curproc->p_lock);
+	/* we don't need to lock proc->p_lock as we have the only reference */
 	if (curproc->p_cwd != NULL) {
 		VOP_INCREF(curproc->p_cwd);
 		proc->p_cwd = curproc->p_cwd;
 	}
 	spinlock_release(&curproc->p_lock);
-#endif // UW
-
-#ifdef UW
-	/* increment the count of processes */
-        /* we are assuming that all procs, including those created by fork(),
-           are created using a call to proc_create_runprogram  */
-	P(proc_count_mutex); 
-	proc_count++;
-	V(proc_count_mutex);
-#endif // UW
 
 	return proc;
 }

@@ -186,9 +186,6 @@ complainx(const char *fmt, ...)
 
 	/* Write the message in one go so it's atomic */
 	rc = write(STDERR_FILENO, buf, strlen(buf));
-        /* suppress compiler warning about setting but not
-           using rc */
-        (void)rc;
 }
 
 static
@@ -206,9 +203,6 @@ complain(const char *fmt, ...)
 
 	/* Write the message in one go so it's atomic */
 	rc = write(STDERR_FILENO, buf, strlen(buf));
-        /* suppress compiler warning about setting but not
-           using rc */
-        (void)rc;
 }
 
 ////////////////////////////////////////////////////////////

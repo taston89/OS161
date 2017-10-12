@@ -37,7 +37,6 @@
 #include <clock.h>
 #include <thread.h>
 #include <proc.h>
-#include <synch.h>
 #include <vfs.h>
 #include <sfs.h>
 #include <syscall.h>
@@ -152,11 +151,10 @@ common_prog(int nargs, char **args)
 		return result;
 	}
 
-#ifdef UW
-	/* wait until the process we have just launched - and any others that it 
-	   may fork - is finished before proceeding */
-	P(no_proc_sem);
-#endif // UW
+	/*
+	 * The new process will be destroyed when the program exits...
+	 * once you write the code for handling that.
+	 */ 
 
 	return 0;
 }
@@ -465,10 +463,6 @@ static const char *testmenu[] = {
 	"[sy1] Semaphore test                ",
 	"[sy2] Lock test             (1)     ",
 	"[sy3] CV test               (1)     ",
-#ifdef UW
-	"[uw1] UW lock test          (1)     ",
-	"[uw2] UW vmstats test       (3)     ",
-#endif // UW
 	"[fs1] Filesystem test               ",
 	"[fs2] FS read stress        (4)     ",
 	"[fs3] FS write stress       (4)     ",
@@ -578,7 +572,6 @@ static struct {
 	{ "sy3",	cvtest },
 #ifdef UW
 	{ "uw1",	uwlocktest1 },
-	{ "uw2",	uwvmstatstest },
 #endif
 
 	/* file system assignment tests */

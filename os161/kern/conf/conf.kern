@@ -335,11 +335,11 @@ file      thread/threadlist.c
 #
 
 file      vm/kmalloc.c
-file      vm/uw-vmstats.c
-# UW Mod - no longer used
-#defoption vm
-#optfile   vm   vm/vm.c
-# optofffile dumbvm   vm/addrspace.c
+# UW Mod
+defoption vm
+optfile   vm   vm/vm.c
+
+optofffile dumbvm   vm/addrspace.c
 
 #
 # Network
@@ -375,9 +375,6 @@ file      vfs/devnull.c
 file      syscall/loadelf.c
 file      syscall/runprogram.c
 file      syscall/time_syscalls.c
-# UW additions
-file      syscall/proc_syscalls.c
-file      syscall/file_syscalls.c
 
 #
 # Startup and initialization
@@ -422,7 +419,7 @@ defoption synchprobs
 optfile   synchprobs  synchprobs/whalemating.c
 # UW Mod
 optfile   synchprobs  synchprobs/catmouse.c
-optfile   synchprobs  synchprobs/catmouse_synch.c
+optfile   synchprobs  synchprobs/bowls.c
 
 
 ########################################
@@ -447,6 +444,8 @@ file    test/uw-tests.c
 defoption A0
 defoption A1
 defoption A2
+# UW For A3 use the stats tracking code provided
 defoption A3
+   file    vm/uw-vmstats.c
 defoption A4
 defoption A5

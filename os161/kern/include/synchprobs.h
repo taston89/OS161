@@ -1,13 +1,13 @@
-#ifndef _SYNCHPROBS_H_
-#define _SYNCHPROBS_H_
 
-/* student-implemented functions for the cat/mouse problem */
+/* TBB: Created because newer compilers want prototypes for these functions */
 
-void cat_before_eating(unsigned int bowl);
-void cat_after_eating(unsigned int bowl);
-void mouse_before_eating(unsigned int bowl);
-void mouse_after_eating(unsigned int bowl);
-void catmouse_sync_init(int bowls);
-void catmouse_sync_cleanup(int bowls);
+/* For the catmouse problem */
+/* this must be called before any calls to cat_eat or mouse_eat */
+int initialize_bowls(unsigned int bowlcount);
 
-#endif /* _SYNCHPROBS_H_ */
+void cleanup_bowls( void );
+void cat_eat(unsigned int bowlnumber, int eat_time);
+void mouse_eat(unsigned int bowlnumber, int eat_time);
+void cat_sleep(int sleep_time);
+void mouse_sleep(int sleep_time);
+

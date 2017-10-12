@@ -1,3 +1,5 @@
+#include "opt-A3.h"
+#if OPT_A3
 /* UW specific code - This won't be needed or used until assignment 3 */
 
 /* belongs in kern/vm/uw-vmstats.c */
@@ -19,7 +21,7 @@
 /* Counters for tracking statistics */
 static unsigned int stats_counts[VMSTAT_COUNT];
 
-struct spinlock stats_lock = SPINLOCK_INITIALIZER;
+struct lock *stats_lock = 0;
 
 /* Strings used in printing out the statistics */
 static const char *stats_names[] = {
@@ -41,23 +43,37 @@ static const char *stats_names[] = {
 void
 vmstats_inc(unsigned int index)
 {
-    spinlock_acquire(&stats_lock);
+    /* simple check that vmstat_init has been called */
+    KASSERT(stats_lock);
+    lock_acquire(stats_lock);
       _vmstats_inc(index);
-    spinlock_release(&stats_lock);
+    lock_release(stats_lock);
 }
 
 /* ---------------------------------------------------------------------- */
 void
 vmstats_init(void)
 {
-  /* Although the spinlock is initialized at declaration time we do it here
-   * again in case we want use/reset these stats repeatedly without shutting down the kernel.
-   */
-  spinlock_init(&stats_lock);
+  /* Ensure this only gets called once */
+  KASSERT(stats_lock == 0);
+  stats_lock = lock_create("StatsLock");
+  KASSERT(stats_lock != 0);
 
-  spinlock_acquire(&stats_lock);
+  lock_acquire(stats_lock);
     _vmstats_init();
-  spinlock_release(&stats_lock);
+  lock_release(stats_lock);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Assumes vmstat_init has already been called */
+void
+vmstats_print(void)
+{
+  /* simple check that vmstat_init has been called */
+  KASSERT(stats_lock);
+  lock_acquire(stats_lock);
+    _vmstats_print();
+  lock_release(stats_lock);
 }
 
 /* ---------------------------------------------------------------------- */
@@ -87,14 +103,8 @@ _vmstats_init(void)
 }
 
 /* ---------------------------------------------------------------------- */
-/* Assumes vmstat_init has already been called */
-/* NOTE: We do not grab the spinlock here because kprintf may block
- * and we can't block while holding a spinlock.
- * Just use this when there is only one thread remaining.
- */
-
 void
-vmstats_print(void)
+_vmstats_print(void)
 {
   int i = 0;
   int free_plus_replace = 0;
@@ -121,8 +131,7 @@ vmstats_print(void)
       tlb_faults, free_plus_replace); 
   }
 
-  kprintf("VMSTAT TLB Reloads + Page Faults (Zeroed) + Page Faults (Disk) = %d\n",
-    disk_plus_zeroed_plus_reload);
+  kprintf("VMSTAT TLB Reloads + Page Faults (Zeroed) + Page Faults (Disk) = %d\n", disk_plus_zeroed_plus_reload);
   if (tlb_faults != disk_plus_zeroed_plus_reload) {
     kprintf("WARNING: TLB Faults (%d) != TLB Reloads + Page Faults (Zeroed) + Page Faults (Disk) (%d)\n",
       tlb_faults, disk_plus_zeroed_plus_reload); 
@@ -131,7 +140,10 @@ vmstats_print(void)
   kprintf("VMSTAT ELF File reads + Swapfile reads = %d\n", elf_plus_swap_reads);
   if (disk_reads != elf_plus_swap_reads) {
     kprintf("WARNING: ELF File reads + Swapfile reads != Page Faults (Disk) %d\n",
-      elf_plus_swap_reads);
+       elf_plus_swap_reads);
   }
+
 }
 /* ---------------------------------------------------------------------- */
+
+#endif /* OPT_A3 */
