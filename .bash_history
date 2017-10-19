@@ -268,3 +268,108 @@ ls
 vim Re
 ls
 vim README 
+ls
+cd os161/
+./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
+cd kern/conf/
+ls
+if config
+ifconfig
+pwd
+./config ASST0
+cd ../compile/ASST0/
+bmake depend
+pmake depend
+bmake
+bmake install
+pmake install
+pwd
+cd ~/os161/
+pwd
+bmake
+cp ~/sys161.conf root
+ls
+cp ~/sys161.conf root
+cd ~
+ls
+ls -l
+cp ~/sys161 root
+ls
+cp sys161.conf root
+cd root
+ls
+rm -rf os161/
+ls
+git clone https://github.com/arthurdent/os161/git
+git clone https://github.com/arthurdent/os161.git
+ls
+cd os161/
+./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
+ls
+cd kern/conf/
+ls
+pwd
+./config ASST0
+cd ../compile/ASST0
+pwd
+bmake depend
+bmake
+bmake install
+pmake dpend
+pmake depend
+pmake
+pmake install
+cd ~/os161/
+pwd
+bmake
+cp ~/sys161/sys161.conf root
+cd root
+sys161 kernel-ASST0
+cd 
+ls
+git add .
+git commit -m "Working install"
+git push
+ls
+vim README 
+ls
+cd os161/
+ls
+cd build/
+ls
+cd install/
+ls
+cd ..
+ls
+vim mankefile
+ls
+vim Makefile 
+ls
+clear
+ls
+cd build/
+ls
+cd install/
+ls
+cd ..
+ls
+cd ..
+ls
+cd common/
+ls
+cd liq
+cd libc/
+ls
+cd arch/
+ls
+cd mips/
+ls
+vim setjmp.S 
+cd ..
+ls
+cd ..
+ls
+cd printf/
+ls
+vim __printf.c 
+who

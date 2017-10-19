@@ -8,6 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
 :q
 
 # Search String History (newest to oldest):
@@ -21,14 +22,34 @@
 # Registers:
 
 # File marks:
-'0  68  0  ~/README
-'1  1  0  ~/README
-'2  1  0  ~/Re
-'3  1  0  ~/os161/configure
+'0  72  73  ~/os161/kern/startup/main.c
+'1  74  0  ~/os161/kern/startup/main.c
+'2  73  72  ~/os161/kern/startup/main.c
+'3  71  0  ~/os161/Makefile
+'4  266  0  ~/os161/common/libc/printf/__printf.c
+'5  104  0  ~/os161/common/libc/arch/mips/setjmp.S
+'6  15  0  ~/os161/Makefile
+'7  1  0  ~/os161/mankefile
+'8  6  0  ~/README
+'9  68  0  ~/README
 
 # Jumplist (newest first):
--'  68  0  ~/README
+-'  72  73  ~/os161/kern/startup/main.c
+-'  2  0  ~/os161/kern/startup/main.c
+-'  1  0  ~/os161/kern/startup/main.c
+-'  74  0  ~/os161/kern/startup/main.c
+-'  73  72  ~/os161/kern/startup/main.c
+-'  71  0  ~/os161/Makefile
+-'  1  0  ~/os161/Makefile
+-'  266  0  ~/os161/common/libc/printf/__printf.c
+-'  1  0  ~/os161/common/libc/printf/__printf.c
+-'  104  0  ~/os161/common/libc/arch/mips/setjmp.S
+-'  1  0  ~/os161/common/libc/arch/mips/setjmp.S
+-'  15  0  ~/os161/Makefile
+-'  1  0  ~/os161/mankefile
+-'  6  0  ~/README
 -'  1  0  ~/README
+-'  68  0  ~/README
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
 -'  1  0  ~/os161/configure
@@ -40,12 +61,103 @@
 -'  1  0  ~/os161/configure
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  6  0  ~/README
+-'  1  0  ~/README
+-'  68  0  ~/README
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/mankefile
+-'  6  0  ~/README
+-'  1  0  ~/README
+-'  68  0  ~/README
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
+-'  1  0  ~/os161/configure
+-'  1  0  ~/os161/configure
+-'  1  0  ~/Re
 -'  1  0  ~/os161/configure
 
 # History of marks within files (newest to oldest):
 
+> ~/os161/kern/startup/main.c
+	"	72	73
+	^	72	74
+	.	72	74
+	+	73	72
+	+	74	64
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+	+	73	72
+	+	72	74
+
+> ~/os161/Makefile
+	"	71	0
+
+> ~/os161/common/libc/printf/__printf.c
+	"	266	0
+
+> ~/os161/common/libc/arch/mips/setjmp.S
+	"	104	0
+
+> ~/os161/mankefile
+	"	1	0
+
 > ~/README
-	"	68	0
+	"	6	0
 
 > ~/Re
 	"	1	0

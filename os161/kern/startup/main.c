@@ -69,8 +69,9 @@ extern const char buildconfig[];
  */
 static const char harvard_copyright[] =
     "Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009\n"
-    "   President and Fellows of Harvard College.  All rights reserved.\n";
-
+    "   President and Fellows of Harvard College.  All rights reserved.\n"
+	 " Version edited by Tim Aston SOS Fall 2017 Evergreen State College\n"
+	 " Code edited by Tim Aston SOS Fall Evergreen State College\n";
 
 /*
  * Initial boot sequence.
