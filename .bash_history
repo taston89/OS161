@@ -1,262 +1,4 @@
 ls
-cd os161/
-ls
-cd ..
-ls
-cd os161/
-ls
-vi configure 
-ls
-cd os161/
-ls
-cd kern/conf./config
-cd kern/conf./config ASSTO
-ls
-cd ..
-ls
-cd asttim22/
-ls
-man git
-git init
-git add .
-git remote add origin https://github.com/taston89/TimsCodeLand/tree/master/SOS/Fall%202017
-git remote -v
-git push origin master
-git commit -m "
-
-
-git commit -m "Pushing os 161 to git"
-git config --global user.email taston89@Hhotmail.com
-git config --global user.name taston89
-git commit -m "Pushing os 161 to git"
-git push origin master
-git remote add origin https://github.com/taston89/TimsCodeLand/tree/master/SOS/Fall%202017
-git remote -v
-git push origin master
-git remote add origin 644 os161/user/uw-testbin/zhog/Makefile
-git remote add origin https://github.com/taston89/TimsCodeLand.git
-git push origin master
-ls
-git push origin master
-ls
-dir
-ls -a
-del .git
-rm -rf .git
-ls -a
-git init
-git add .
-git commit -m "pushing os 161 to git"
-git remote add origin https://github.com/taston89/TimsCodeLand/tree/master/SOS/Fall%202017
-git remote -v
-git push origin master
-git config --global user.name "taston89"
-git config --global user.email taston89@hotmail.com
-git push origin master
-git push
-git status
-ls
-cd ~/os161/
-./configure --ostree=$HOME/os161/root --toolprefix=sos-
-ls
-cd kern
-cd .
-cd ..
-ls
-cd os161/
-ls
-./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
-ls
-./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
-./configure --help
-where
-cd ..
-ls
-ls -a
-rm -rf os161/ README  .README.swp sys161
-ls
-ls -a
-git clone https://github.com/starlight910/OS161.git
-ls
-cd OS161/
-ls
-ls -a
-rm -rf .git
-ls
-ls -a
-ls
-cd ..
-ls
-cd OS161/
-ls
-sys161 kernel-ASST0
-cd ..
-ls
-cd OS161/
-ls
-cd os161/
-ls
-sys161 kernel-ASST0
-ls
-cd root
-ls
-sys161 kernel-ASST0 
-cd ..
-ls
-cd ..
-ls
-cd ,,
-cd ..
-ls
-rm -rf OS161/
-ls
-git clone https://github.com/arthurdent/os161.git
-ls
-cd os161/
-ls
-./configure --ostree="$HOME/os/root" --toolprefix="sos-"
-cd kern/conf/
-./config ASST0
-bmake depend
-pmake depend
-pmake
-pmake install
-pmake install
-ls
-cd ..
-ls
-cd ..
-ls
-cd user
-ls
-cd ..
-ls
-cd usr/share/mk
-cd ..
-ls
-cd os161/
-ls
-cd kern/
-ls
-cd conf/
-l
-ls
-pmake install
-cd 
-ls
-cd os161/
-ls
-cd ..
-ls
-rm -rf
-rm -rf os161/
-ls
-ls -a
-git clone https://github.com/arthurdent/os161.git
-ls
-git clone https://github.com/taston89/OS161.git
-ls
-cd OS161/
-ls
-ls -a
-rm -rf os161/
-mv * ..
-ls
-ls -a
-cd ..
-ls
-ls
-cd OS161/
-ls
-ls -a
-mv .bash_aliases .bash_logout .bashrc .gitconfig .screenrc .vimrc .bash_history .bash_profile .git .profile .viminfo ..
-mv .bash_aliases .bash_logout .bashrc .gitconfig .screenrc .vimrc .bash_history .bash_profile .profile .viminfo ..
-..
-ls
-cd ..
-ls
-mv OS161/*(DN) .
-mv OS161/*(DN) ./
-cd OS161/
-ls
-ls -a
-cd ..
-ls
-ls -a
-rm -rf OS161/
-git add .
-git commit -m "Fresh os161"
-git push origin master
-git push origin master
-ls
-cd os161/
-./configure --ostree=$HOME/os161/root --toolprefix=sos-
-cd kern/conf/
-./config ASST0
-pmake depend
-pmake
-pmake install
-bmake install
-cd $HOME/os161
-pmake
-cd kern/conf/
-pmake install
-ls
-ls -a
-bmake depend
-make depend
-make
-pmake depend
-pmake
-pmake install
-cd 
-ftp://ftp.eecs.harvard.edu/pub/os161/
-ls
-ls -a
-ls
-rm -rf os161/ README sys161
-git clone https://github.com/starlight910/OS161.git
-ls -a
-ls
-cd OS161/
-ls
-ls -a
-mv * ..
-ls
-ls -a
-cd ..
-ls
-rm -rf OS161/
-ls
-ls -a
-cd os161/
-ls
-./configure --ostree="$HOME/os161/root" --toolprefix="sos-"
-cd kern/conf/
-./config ASTT0
-ls
-./config ASST0
-cd ../comiple/ASTT0
-cd ../compile/ASST0/
-bmake dpend
-pmake depend
-pmake
-cd ..
-ls
-cd ..
-ls
-./config ASTT0
-./conffig ASST0
-cd conf/
-./config ASTT0
-ls
-./config ASST0
-cd ../compile/ASST0/
-pmake depend
-bmake dpend
-cd ~/os161/
-pmake
-ls
 vim README 
 ls
 cd os161/
@@ -373,3 +115,386 @@ cd printf/
 ls
 vim __printf.c 
 who
+cd os161/
+find -name main.c
+cd kern/startup/
+ls
+vim menu.c 
+ls
+cd os161/
+ls
+vim Makefile 
+cd kern/
+ls
+cd lib/
+ls
+cd ..
+ls
+find ./ -name main.c
+ls
+cd startup/
+ls
+vim main.c 
+pmake
+pmake depend
+pmake
+ls
+cd ..
+ls
+cd ..
+ls
+cd kern/
+ls
+cd compile/
+ls
+cd ASST0/
+ls
+pmake depend
+pmake
+bmake depend
+bmake
+bmake install
+ls
+pmake depend
+pmake
+bmake
+cd 
+ls
+sys161
+ls
+sys161 kernel
+ls
+ls -a
+sys161 kernel
+who
+write limjun10
+ls
+cd os161/
+ls
+cd kern/
+ls
+cd ..
+ls
+oooo
+;s
+ls
+cd root/
+ls
+kernel-ASSTO
+cd ..
+ls
+cd root/
+ls
+clear
+ls
+cd ..
+cd root/
+ls
+os161
+sys161 kernel-ASST0 
+ls
+cd ..
+ls
+cd kern/
+ls
+cd ..
+ls
+cd root/
+ls
+cd ..
+ls
+cd build/
+ls
+cd ..
+ls
+cd root/
+ls
+cd ..
+ls
+cd ..
+ls
+cd os161/
+ls
+cd design/
+ls
+cd ..
+ls
+cd common/
+ls
+cd ..
+ls
+cd build/
+ls
+cd user/
+ls
+cd ..
+ls
+cd install/
+ls
+cd ..
+ls
+cd ..
+ls
+cd user/
+ls
+cd ..
+ls
+cd kern/
+ls
+cd conf/
+ls
+pmake depend
+pmake
+pmake install
+bmake depend
+pmake depend
+pmake
+pmake install
+ls
+cd ASSTO
+cd ASST0
+bmake install
+cd
+ls
+cd os161/
+ls
+kern/conf
+cd kern/
+ls
+cd conf/
+ls
+./config ASST0
+pmake depend
+pmake
+pmake install
+ls
+./config ASST0
+cd ../compile/ASST0
+pmake depend
+pmake
+pmake install
+bmake depend
+bmake
+bmake install
+cd
+ls
+cd os161/
+ls
+cd kern/
+ls
+cd ..
+ls
+cd root/
+ls
+kernel-ASTT0
+cd 
+;s
+ls
+clear
+ls
+cd $HOME/os161
+.configure --ostree=$HOME/os161/root --toolprefix=sos-
+./configure --ostree=$HOME/os161/root --toolprefix=sos-
+cd kern/
+cd conf/
+./config ASST0
+pmake depend
+pmake
+pmake install
+bmake depend
+cd 
+cd os161/
+pmake
+pmake install
+ls
+cd root/
+ls
+os161 kernel-ASST0
+sys161 kernel-ASST0 
+ls
+cd ..
+ls
+find main.c
+find -name main.c
+cd kern/startup/
+ls
+vim main.c 
+ls
+cd ..
+ls
+cd ..
+ls
+cd kern/
+ls
+cd ..
+ls
+cd root/
+ls
+sys161 kernel-ASST0 
+cd ..
+cd kern/
+ls
+cd compile/
+ls
+cd ASST0/
+ls
+pmake depend
+pmake
+pmake install
+cd ..
+ls
+cd ..
+ls
+cd
+cd os161/
+ls
+cd kern/conf/
+./config ASST0
+cd ../compile/ASST0/
+pmake depend
+pmake
+pmake install
+cd ..
+ls
+cd ..
+ls
+cd ,,
+cd ..
+ls
+cd root
+ls
+sys161 kernel-ASST0 
+cd
+find -name main.c
+cd os161/kern/startup/
+ls
+vim main.c 
+pmake depend
+pmake
+pmake install
+cd
+cd os161/
+ls
+cd kern/
+ls
+cd compile/
+cd ASST0/
+ls
+pmake depend
+pmake install
+pmake
+bmake depend
+bmake
+pmake depend
+pmake
+man pmake
+pwd
+cd
+find -name main.c
+cd os161/kern/startup/
+ls
+vim main.c
+cd
+cd os161/
+ls
+cd kern/
+ls
+cd compile/
+ls
+cd ASST0/
+ls
+pmake depend
+pmake
+pmake install
+cd 
+ls
+cd os161/
+ls
+cd kern/
+ls
+cd ..
+ls
+cd root/
+l
+ls
+sys161 kernel-ASST0 
+cd 
+ls
+git add .
+git commit -m "os-lab2"
+git push
+ls
+cd os161/
+ls
+cd root/
+ls
+cd
+find -name main.c
+cd os161/kern/startup/
+ls
+vim hello.c
+ls
+vim main.c 
+vim hello.c 
+ls
+vim main.c 
+vim hello.c 
+gcc hello.c 
+ls
+vim hello.c 
+gcc hello.c 
+ls
+vim hello.c 
+ls
+cd os161/
+ls
+find -name hello
+find -name hello.c
+cd kern/
+cd startup/
+ls
+ls -a
+ls
+vim hello.c 
+vim main.c 
+ls
+cd ..
+ls
+cd ..
+sys161 kern
+cd ,,
+cd ..
+ls
+sys161 kernel
+cd os161/
+ls
+cd kern/
+ls
+cd conf/
+ls
+sys161 kern
+sys161 kernel
+cd ..
+ls
+cd ..
+ls
+cd root/
+ls
+sys161 kernel
+cd ,,
+cd ..
+ls
+cd root/
+ls
+cd ..
+ls
+cd ..
+ls
+cd os161/
+ls
+cd kern/
+ls
+cd startup/
+ls
+vim menu.c 
+vim main.c 

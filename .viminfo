@@ -8,8 +8,8 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
-:wq
 :q
+:wq
 
 # Search String History (newest to oldest):
 
@@ -22,21 +22,28 @@
 # Registers:
 
 # File marks:
-'0  72  73  ~/os161/kern/startup/main.c
-'1  74  0  ~/os161/kern/startup/main.c
-'2  73  72  ~/os161/kern/startup/main.c
-'3  71  0  ~/os161/Makefile
-'4  266  0  ~/os161/common/libc/printf/__printf.c
-'5  104  0  ~/os161/common/libc/arch/mips/setjmp.S
-'6  15  0  ~/os161/Makefile
-'7  1  0  ~/os161/mankefile
-'8  6  0  ~/README
-'9  68  0  ~/README
+'0  105  0  ~/os161/kern/startup/main.c
+'1  109  0  ~/os161/kern/startup/main.c
+'2  175  0  ~/os161/kern/startup/menu.c
+'3  104  51  ~/os161/kern/startup/main.c
+'4  1  0  ~/os161/kern/startup/hello.c
+'5  106  0  ~/os161/kern/startup/menu.c
+'6  1  0  ~/os161/kern/startup/main.c
+'7  72  73  ~/os161/kern/startup/main.c
+'8  74  0  ~/os161/kern/startup/main.c
+'9  73  72  ~/os161/kern/startup/main.c
 
 # Jumplist (newest first):
+-'  105  0  ~/os161/kern/startup/main.c
+-'  1  0  ~/os161/kern/startup/main.c
+-'  109  0  ~/os161/kern/startup/main.c
+-'  175  0  ~/os161/kern/startup/menu.c
+-'  1  0  ~/os161/kern/startup/menu.c
+-'  104  51  ~/os161/kern/startup/main.c
+-'  1  0  ~/os161/kern/startup/hello.c
+-'  106  0  ~/os161/kern/startup/menu.c
 -'  72  73  ~/os161/kern/startup/main.c
 -'  2  0  ~/os161/kern/startup/main.c
--'  1  0  ~/os161/kern/startup/main.c
 -'  74  0  ~/os161/kern/startup/main.c
 -'  73  72  ~/os161/kern/startup/main.c
 -'  71  0  ~/os161/Makefile
@@ -125,16 +132,13 @@
 -'  1  0  ~/os161/configure
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
 
 # History of marks within files (newest to oldest):
 
 > ~/os161/kern/startup/main.c
-	"	72	73
-	^	72	74
-	.	72	74
+	"	105	0
+	^	104	52
+	.	104	52
 	+	73	72
 	+	74	64
 	+	1	0
@@ -143,6 +147,28 @@
 	+	2	0
 	+	73	72
 	+	72	74
+	+	110	57
+	+	109	0
+	+	107	19
+	+	104	52
+
+> ~/os161/kern/startup/menu.c
+	"	175	0
+
+> ~/os161/kern/startup/hello.c
+	"	1	0
+	^	1	30
+	.	1	30
+	+	1	16
+	+	7	0
+	+	12	0
+	+	8	0
+	+	10	29
+	+	11	7
+	+	1	17
+	+	6	16
+	+	3	0
+	+	1	30
 
 > ~/os161/Makefile
 	"	71	0

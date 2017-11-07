@@ -101,8 +101,13 @@ boot(void)
 	kprintf("OS/161 base system version %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
+   /*THIS IS SOMETHING I ADDED FOR LAB 3!!!!!!!!!!*/
+	#if OPT_A0
+		hello();
+	#endif /* OPT_A0 */
 
-	kprintf("Put-your-group-name-here's system version %s (%s #%d)\n", 
+
+	kprintf("Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 
