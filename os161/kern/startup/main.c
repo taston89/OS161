@@ -50,7 +50,10 @@
 #include <test.h>
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
+#include <hello.h>
 
+//Lab 3
+#include "opt-A0.h"
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -72,7 +75,6 @@ static const char harvard_copyright[] =
     "   President and Fellows of Harvard College.  All rights reserved.\n"
 	 " Version edited by Tim Aston SOS Fall 2017 Evergreen State College\n"
 	 " Code edited by Tim Aston SOS Fall Evergreen State College\n";
-
 /*
  * Initial boot sequence.
  */
@@ -96,18 +98,18 @@ boot(void)
 	 * anything at all. You can make it larger though (it's in
 	 * dev/generic/console.c).
 	 */
-
+   
 	kprintf("\n");
 	kprintf("OS/161 base system version %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
    /*THIS IS SOMETHING I ADDED FOR LAB 3!!!!!!!!!!*/
 	#if OPT_A0
-		hello();
+		hello();//added _ to see if that would make it a system call
 	#endif /* OPT_A0 */
 
 
-	kprintf("Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
+	kprintf("TEST TEST Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 

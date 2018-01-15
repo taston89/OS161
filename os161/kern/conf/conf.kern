@@ -318,6 +318,9 @@ file      ../common/libc/string/strtok_r.c
 #
 # Thread system
 #
+file      startup/main.c
+file      startup/menu.c
+file      startup/hello.c
 
 file      thread/clock.c
 # UW Mod
@@ -382,7 +385,7 @@ file      syscall/time_syscalls.c
 
 file      startup/main.c
 file      startup/menu.c
-
+file      startup/hello.c
 ########################################
 #                                      #
 #             Filesystems              #

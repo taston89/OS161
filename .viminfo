@@ -10,6 +10,8 @@
 # Command Line History (newest to oldest):
 :q
 :wq
+:w
+:Q
 
 # Search String History (newest to oldest):
 
@@ -20,32 +22,64 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+""0	CHAR	0
+	.
 
 # File marks:
-'0  105  0  ~/os161/kern/startup/main.c
-'1  109  0  ~/os161/kern/startup/main.c
-'2  175  0  ~/os161/kern/startup/menu.c
-'3  104  51  ~/os161/kern/startup/main.c
-'4  1  0  ~/os161/kern/startup/hello.c
-'5  106  0  ~/os161/kern/startup/menu.c
-'6  1  0  ~/os161/kern/startup/main.c
-'7  72  73  ~/os161/kern/startup/main.c
-'8  74  0  ~/os161/kern/startup/main.c
-'9  73  72  ~/os161/kern/startup/main.c
+'0  422  0  ~/os161/kern/conf/conf.kern
+'1  388  24  ~/os161/kern/conf/conf.kern
+'2  126  4  ~/os161/kern/startup/main.c
+'3  101  2  ~/os161/kern/startup/main.c
+'4  10  31  ~/os161/kern/startup/hello.c
+'5  1  0  ~/compile/fullcompile
+'6  323  42  ~/os161/kern/conf/conf.kern
+'7  277  72  ~/os161/kern/conf/conf.kern
+'8  105  11  ~/os161/kern/startup/main.c
+'9  78  1  ~/os161/kern/startup/main.c
 
 # Jumplist (newest first):
--'  105  0  ~/os161/kern/startup/main.c
+-'  422  0  ~/os161/kern/conf/conf.kern
+-'  1  0  ~/os161/kern/conf/conf.kern
+-'  388  24  ~/os161/kern/conf/conf.kern
+-'  126  4  ~/os161/kern/startup/main.c
 -'  1  0  ~/os161/kern/startup/main.c
--'  109  0  ~/os161/kern/startup/main.c
+-'  101  2  ~/os161/kern/startup/main.c
+-'  10  31  ~/os161/kern/startup/hello.c
+-'  1  0  ~/os161/kern/startup/hello.c
+-'  1  0  ~/compile/fullcompile
+-'  323  42  ~/os161/kern/conf/conf.kern
+-'  277  72  ~/os161/kern/conf/conf.kern
+-'  105  11  ~/os161/kern/startup/main.c
+-'  78  1  ~/os161/kern/startup/main.c
+-'  77  64  ~/os161/kern/startup/main.c
+-'  1  0  ~/main.c
+-'  1  11  ~/compile/configure
+-'  7  0  ~/compile/install
+-'  1  0  ~/compile/install
+-'  5  2  ~/compile/install
+-'  75  0  ~/os161/kern/startup/main.c
+-'  16  18  ~/compileOS
+-'  1  0  ~/compileOS
+-'  112  19  ~/os161/kern/startup/main.c
+-'  1  0  ~/instructions.txt
+-'  9  12  ~/compileOS
+-'  3  19  ~/instructions.txt
+-'  3  54  ~/compileOS
+-'  1  1  ~/makefile
+-'  15  14  ~/makefile
+-'  108  62  ~/os161/kern/startup/main.c
+-'  23  19  ~/instructions.txt
+-'  19  35  ~/instructions.txt
+-'  1  0  ~/README
+-'  79  0  ~/os161/kern/startup/main.c
+-'  107  0  ~/os161/kern/startup/main.c
+-'  111  0  ~/os161/kern/startup/main.c
 -'  175  0  ~/os161/kern/startup/menu.c
 -'  1  0  ~/os161/kern/startup/menu.c
--'  104  51  ~/os161/kern/startup/main.c
--'  1  0  ~/os161/kern/startup/hello.c
+-'  106  51  ~/os161/kern/startup/main.c
 -'  106  0  ~/os161/kern/startup/menu.c
--'  72  73  ~/os161/kern/startup/main.c
 -'  2  0  ~/os161/kern/startup/main.c
--'  74  0  ~/os161/kern/startup/main.c
--'  73  72  ~/os161/kern/startup/main.c
+-'  76  72  ~/os161/kern/startup/main.c
 -'  71  0  ~/os161/Makefile
 -'  1  0  ~/os161/Makefile
 -'  266  0  ~/os161/common/libc/printf/__printf.c
@@ -55,7 +89,6 @@
 -'  15  0  ~/os161/Makefile
 -'  1  0  ~/os161/mankefile
 -'  6  0  ~/README
--'  1  0  ~/README
 -'  68  0  ~/README
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
@@ -81,9 +114,6 @@
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
 -'  1  0  ~/os161/configure
--'  6  0  ~/README
--'  1  0  ~/README
--'  68  0  ~/README
 -'  1  0  ~/Re
 -'  1  0  ~/os161/configure
 -'  1  0  ~/os161/configure
@@ -106,69 +136,167 @@
 -'  1  0  ~/os161/configure
 -'  1  0  ~/os161/configure
 -'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/mankefile
--'  6  0  ~/README
--'  1  0  ~/README
--'  68  0  ~/README
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
 
 # History of marks within files (newest to oldest):
 
+> ~/os161/kern/conf/conf.kern
+	"	422	0
+	^	388	25
+	.	388	24
+	+	277	28
+	+	278	9
+	+	277	9
+	+	277	48
+	+	277	0
+	+	323	25
+	+	321	41
+	+	322	41
+	+	323	42
+	+	321	24
+	+	322	24
+	+	323	25
+	+	388	24
+
 > ~/os161/kern/startup/main.c
-	"	105	0
-	^	104	52
-	.	104	52
-	+	73	72
-	+	74	64
+	"	126	4
+	^	126	5
+	.	55	6
+	+	76	72
+	+	77	64
 	+	1	0
 	+	1	0
 	+	1	0
 	+	2	0
-	+	73	72
-	+	72	74
-	+	110	57
-	+	109	0
-	+	107	19
-	+	104	52
+	+	76	72
+	+	75	74
+	+	112	57
+	+	111	0
+	+	109	19
+	+	106	52
+	+	108	62
+	+	77	117
+	+	112	19
+	+	108	2
+	+	78	0
+	+	53	18
+	+	105	12
+	+	53	17
+	+	101	4
+	+	108	2
+	+	101	3
+	+	56	9
+	+	56	18
+	+	55	6
+
+> ~/os161/kern/startup/hello.c
+	"	10	31
+	^	10	32
+	.	10	31
+	+	1	16
+	+	6	0
+	+	11	0
+	+	7	0
+	+	10	29
+	+	10	37
+	+	1	17
+	+	5	32
+	+	3	0
+	+	1	30
+	+	6	17
+	+	6	0
+	+	1	0
+	+	7	13
+	+	10	31
+
+> ~/compile/fullcompile
+	"	1	0
+
+> ~/compile/step_2
+	"	8	18
+	^	8	19
+	.	8	18
+	+	8	18
+
+> ~/compile/step_1
+	"	1	0
+	^	9	1
+	.	9	0
+	+	3	25
+	+	2	7
+	+	3	54
+	+	1	0
+	+	2	0
+	+	5	14
+	+	9	12
+	+	7	0
+	+	8	0
+	+	9	0
+
+> ~/main.c
+	"	1	0
+
+> ~/compile/configure
+	"	1	11
+	^	1	11
+	.	2	0
+	+	1	155
+	+	9	13
+	+	2	0
+
+> ~/compile/install
+	"	7	0
+	^	7	15
+	.	7	14
+	+	1	10
+	+	7	14
+
+> ~/compile/compileOS
+	"	1	0
+
+> ~/compileOS
+	"	16	18
+	^	9	13
+	.	10	0
+	+	1	11
+	+	3	54
+	+	16	0
+	+	15	0
+	+	13	0
+	+	10	0
+
+> ~/instructions.txt
+	"	1	0
+	^	3	20
+	.	3	19
+	+	16	0
+	+	12	13
+	+	19	35
+	+	23	19
+	+	4	0
+	+	1	46
+	+	4	0
+	+	3	19
+
+> ~/makefile
+	"	1	1
+	^	1	2
+	.	1	1
+	+	17	18
+	+	4	0
+	+	5	0
+	+	6	0
+	+	9	0
+	+	10	0
+	+	15	15
+	+	1	0
+	+	1	6
+	+	1	1
+
+> ~/README
+	"	1	0
 
 > ~/os161/kern/startup/menu.c
 	"	175	0
-
-> ~/os161/kern/startup/hello.c
-	"	1	0
-	^	1	30
-	.	1	30
-	+	1	16
-	+	7	0
-	+	12	0
-	+	8	0
-	+	10	29
-	+	11	7
-	+	1	17
-	+	6	16
-	+	3	0
-	+	1	30
 
 > ~/os161/Makefile
 	"	71	0
@@ -181,9 +309,6 @@
 
 > ~/os161/mankefile
 	"	1	0
-
-> ~/README
-	"	6	0
 
 > ~/Re
 	"	1	0
