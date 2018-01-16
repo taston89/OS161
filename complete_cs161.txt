@@ -1,0 +1,1 @@
+https://github.com/haisano/OS161-kernel/blob/master/configure

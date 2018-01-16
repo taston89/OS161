@@ -98,15 +98,16 @@ boot(void)
 	 * anything at all. You can make it larger though (it's in
 	 * dev/generic/console.c).
 	 */
-   
+   hello();
 	kprintf("\n");
 	kprintf("OS/161 base system version %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
-   /*THIS IS SOMETHING I ADDED FOR LAB 3!!!!!!!!!!*/
-	#if OPT_A0
-		hello();//added _ to see if that would make it a system call
-	#endif /* OPT_A0 */
+  
+	/* /*THIS IS SOMETHING I ADDED FOR LAB 3!!!!!!!!!!*/
+	//#if OPT_A0
+	//	hello();//added _ to see if that would make it a system call
+	//#endif /* OPT_A0 */
 
 
 	kprintf("TEST TEST Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 

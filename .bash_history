@@ -1,191 +1,3 @@
-ls
-cd
-cd os161/
-ls
-cd kern/conf/
-./config ASST0
-cd ../compile/ASST0/
-pmake depend
-pmake
-pmake install
-cd ..
-ls
-cd ..
-ls
-cd ,,
-cd ..
-ls
-cd root
-ls
-sys161 kernel-ASST0 
-cd
-find -name main.c
-cd os161/kern/startup/
-ls
-vim main.c 
-pmake depend
-pmake
-pmake install
-cd
-cd os161/
-ls
-cd kern/
-ls
-cd compile/
-cd ASST0/
-ls
-pmake depend
-pmake install
-pmake
-bmake depend
-bmake
-pmake depend
-pmake
-man pmake
-pwd
-cd
-find -name main.c
-cd os161/kern/startup/
-ls
-vim main.c
-cd
-cd os161/
-ls
-cd kern/
-ls
-cd compile/
-ls
-cd ASST0/
-ls
-pmake depend
-pmake
-pmake install
-cd 
-ls
-cd os161/
-ls
-cd kern/
-ls
-cd ..
-ls
-cd root/
-l
-ls
-sys161 kernel-ASST0 
-cd 
-ls
-git add .
-git commit -m "os-lab2"
-git push
-ls
-cd os161/
-ls
-cd root/
-ls
-cd
-find -name main.c
-cd os161/kern/startup/
-ls
-vim hello.c
-ls
-vim main.c 
-vim hello.c 
-ls
-vim main.c 
-vim hello.c 
-gcc hello.c 
-ls
-vim hello.c 
-gcc hello.c 
-ls
-vim hello.c 
-ls
-cd os161/
-ls
-find -name hello
-find -name hello.c
-cd kern/
-cd startup/
-ls
-ls -a
-ls
-vim hello.c 
-vim main.c 
-ls
-cd ..
-ls
-cd ..
-sys161 kern
-cd ,,
-cd ..
-ls
-sys161 kernel
-cd os161/
-ls
-cd kern/
-ls
-cd conf/
-ls
-sys161 kern
-sys161 kernel
-cd ..
-ls
-cd ..
-ls
-cd root/
-ls
-sys161 kernel
-cd ,,
-cd ..
-ls
-cd root/
-ls
-cd ..
-ls
-cd ..
-ls
-cd os161/
-ls
-cd kern/
-ls
-cd startup/
-ls
-vim menu.c 
-vim main.c 
-ls
-cd os161/
-ls
-cd kern/
-ls
-cd conf/
-ls
-cd ..
-ls
-cd ..
-ls
-cd os161/
-ls
-cd kern/
-ls
-cd ../root/
-ls
-os161 kernel-ASST0 
-os161 sys161.conf 
-sys161 kernel-ASST0
-cd 
-find -name main.c
-cd os161/kern/startup/
-ls
-vim main.c 
-cd 
-ls
-cd os161/
-cd kern/conf
-ls
-./config ASST0
-cd ../compile/ASST0
-bmake depend
-bmake
 bmake install
 cd
 ls
@@ -498,3 +310,191 @@ ls
 ./fullcompile 
 ls
 vim fullcompile 
+ls
+find ./ -name hello
+ls
+find ./ -name main.c
+cd os161/kern/startup/
+ls
+vim hello.c 
+path
+cwd
+ls
+vim main.c 
+cd ~
+ls
+cd compile/
+ls
+./fullcompile 
+cd ..
+ls
+find ./ -name main
+find ./ -name main.c
+cd os161/kern/
+ls
+cd conf/
+ls
+vim conf.kern 
+ls
+./config ASST0
+bmake depend
+pmake depend
+pmake install
+vim conf.kern 
+pmake install
+pmake depend
+ls
+cd ASST0
+cd ..
+ls
+cd compile/
+ls
+cd ASST0/
+ls
+pmake install
+ls -l
+cd ~
+ls
+cd compile/
+ls
+./fullcompile 
+clear
+ls
+./step_
+./step_1
+./step_2
+./fullcompile 
+cd ..
+ls
+cd testos161/
+ls
+cd OS161-kernel/
+ls
+cd kern/
+cd ..
+ls
+cd root/
+ls
+sys161 kernel-ASST0 
+sys161 kernel-ASST0
+ls
+cd ..
+ls
+cd ..
+ls
+cd OS161-kernel/
+ls
+cd ..
+ls
+cd ..
+ls
+rm testos161/
+rm -r testos161/
+ls
+cd cs161/
+ls
+cd root/
+ls
+cd include/
+ls
+cd kern/
+ls
+cd mips/
+ls
+cd ..
+ls
+rm mips/
+rm -r mips/
+ls
+cd ..
+ls
+rm -r kern/
+cd ..
+ls
+rm -r include/
+cd ..
+ls
+rm -r root
+cd ..
+ls
+rm -r cs161/
+ls
+git clone "https://github.com/haisano/OS161-kernel.git"
+ls
+cd OS161-kernel/
+ls
+cd ..
+ls
+vim instructions.txt 
+ls
+vim complete_cs161.txt
+ls
+ls
+cd os161/
+ls
+cd ..
+ls
+git add .
+git commit -m "Current build of os161 still working on lab 3 from fall sos"
+git push
+git status
+ls
+mkdir testos161
+ls
+cd testos161/
+git clone "https://github.com/haisano/OS161-kernel.git"
+ls
+cd OS161-kernel/
+ls
+cd ..
+ls
+cd ..
+ls
+cp compile/ testos161/compile
+cp compile/ testos161/
+copy compile/ testos161/compile
+ls
+cd compile/
+ls
+cp fullcompile ../testos161/fullcompile
+ls
+cd ..
+ls
+cd testos161/
+ls
+./fullcompile 
+ls
+vim fullcompile 
+chmod 755 ./fullcompile 
+./fullcompile 
+ls
+vim fullcompile 
+ls
+cd ..
+ls
+mkdir testcompile
+cd compile/
+ls
+cop fullcompile ../testcompile/
+cop fullcompile ../testcompile/fullcompile
+cp fullcompile ../testcompile/fullcompile
+cd ..
+ls
+cd testcompile/
+ls
+vim fullcompile 
+chmod 755 fullcompile 
+./fullcompile 
+vim fullcompile 
+chmod 775 fullcompile 
+./fullcompile 
+cd ,,
+cd ..
+ls
+cd OS161-kernel/
+ls
+./configure --ostree=$HOME/OS161-kernel/root --toolprefix=sos-
+cd ..
+ls
+cd os161/
+./configure --ostree=$HOME/os161/root --toolprefix=sos-

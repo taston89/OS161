@@ -1,0 +1,16 @@
+#!/bin/bash
+cd $HOME/os161
+./configure --ostree=$HOME/OS161-kernel/root --toolprefix=sos-
+cd kern/conf
+./config ASST0
+cd ../compile/ASST0
+bmake depend 
+bmake
+bmake install
+cd $HOME/OS161-kernel/
+bmake
+bmake install 
+cd ~/OS161-kernel/root
+cp ~/sys161/sys161.conf sys161.conf 
+cd ~/OS161-kernel/root
+sys161 kernel-ASST0
