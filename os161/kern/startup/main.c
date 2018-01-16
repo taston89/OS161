@@ -110,7 +110,7 @@ boot(void)
 	//#endif /* OPT_A0 */
 
 
-	kprintf("TEST TEST Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
+	kprintf("Edited by Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 

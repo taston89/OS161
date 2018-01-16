@@ -468,6 +468,7 @@ static const char *testmenu[] = {
 	"[fs3] FS write stress       (4)     ",
 	"[fs4] FS write stress 2     (4)     ",
 	"[fs5] FS create stress      (4)     ",
+	"[br1] Bathroom test      (1)       ", //Added lab4
 	NULL
 };
 
@@ -546,6 +547,7 @@ static struct {
 #if OPT_SYNCHPROBS
 	/* in-kernel synchronization problem(s) */
 	{ "sp1",	whalemating },
+	{ "br1", bathroom },
 #ifdef UW
 	{ "sp2",	catmouse },
 #endif /* UW */

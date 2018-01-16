@@ -1,6 +1,3 @@
-
-
-
 #include <types.h>
 #include <lib.h>
 #include <hello.h>
