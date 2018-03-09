@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $HOME/os161/kern/compile/ASST0
+pmake depend 
+pmake
+pmake install

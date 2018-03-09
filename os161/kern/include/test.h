@@ -56,13 +56,19 @@ int queuetest(int, char **);
 int threadtest(int, char **);
 int threadtest2(int, char **);
 int threadtest3(int, char **);
+int funtest(int, char **);
+int unsafethreadcounter(int, char **);
+int lockthreadcounter(int, char **);
+int spinlockthreadcounter(int, char **);
 int semtest(int, char **);
 int locktest(int, char **);
 int cvtest(int, char **);
 
 #ifdef UW
-/* More thread and synchronization tests */
+/* Another thread and synchronization test */
 int uwlocktest1(int, char **);
+/* Used to test uw-vmstats */
+int uwvmstatstest(int, char **);
 #endif
 
 /* filesystem tests */
@@ -77,13 +83,14 @@ int printfile(int, char **);
 int malloctest(int, char **);
 int mallocstress(int, char **);
 int nettest(int, char **);
+int messagetest(int, char **);
 
 /* Routine for running a user-level program. */
 int runprogram(char *progname);
 
 /* Kernel menu system. */
 void menu(char *argstr);
-
+void Hello(void);
 /* The main function, called from start.S. */
 void kmain(char *bootstring);
 

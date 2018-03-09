@@ -65,10 +65,14 @@ cleanitems(void)
 {
 	kprintf("cleanitems: Destroying sems, locks, and cvs\n");
 	sem_destroy(testsem);
+	testsem = NULL;	
 	lock_destroy(testlock);
+	testlock = NULL;
 	cv_destroy(testcv);
+	testcv = NULL;
 	sem_destroy(donesem);
-	}
+	donesem = NULL;
+}
 #endif
 
 static
@@ -321,7 +325,11 @@ cvtest(int nargs, char **args)
 
 	inititems();
 	kprintf("Starting CV test...\n");
+#ifdef UW
+	kprintf("%d threads should print out in reverse order %d times.\n", NTHREADS, NCVLOOPS);
+#else
 	kprintf("Threads should print out in reverse order.\n");
+#endif
 
 	testval1 = NTHREADS-1;
 

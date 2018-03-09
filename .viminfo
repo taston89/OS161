@@ -8,17 +8,34 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/bathroom
+~MSle0~/#endif
+
+# Last Substitute String:
+$
 
 # Command Line History (newest to oldest):
 :q
 :w
-:q!
 :wq
+:wq\
+:q!
 :Q
+:q~
 
 # Search String History (newest to oldest):
+?/#endif
 ?/bathroom
+?/owner
+?/struct lock
+?/lock
+?/lock_a
+?/lock_de
+?/lock_des
+?/struct lock *
+?/bath
+?/semtest
+?/br1
+?/sy1
 ?/cmdta
 ?/fstest
 ?/sy3
@@ -26,12 +43,6 @@
 ?/cvtest
 ?/test
 ?/cmd
-?/cmdt
-?/cmdtable
-?/locktest
-?/createstress
-?/br1
-?/lab4
 
 # Expression History (newest to oldest):
 
@@ -41,244 +52,856 @@
 
 # Registers:
 "0	CHAR	0
-	.
-""1	LINE	0
+	f
+""1	CHAR	0
+	void cv_broadcast(struct cv *cv, struct lock *lock)
+	
+	
+			{
+	
+				(void)cv;
+				(void)lock;
+			}
+	
+"2	LINE	0
 		{ "bootfs",	cmd_bootfs },
+"3	LINE	0
+	#include <lib.h>
+"4	LINE	0
+	
+"5	LINE	0
+	/* The API to implement */
+"6	LINE	0
+	struct greet_api
+"7	LINE	0
+	{
+"8	LINE	0
+		int (*say_hello)(char *name);
+"9	LINE	0
+		int (*say_goodbye)(void);
+"-	CHAR	0
+	f
 
 # File marks:
-'0  44  5  ~/os161/kern/test/bathroom.c
-'1  28  1  ~/os161/kern/startup/menu.c
-'2  58  1  ~/os161/kern/startup/main.c
-'3  531  0  ~/OS161-kernel/kern/startup/menu.c
-'4  498  20  ~/os161/kern/startup/menu.c
-'5  29  0  ~/os161/kern/startup/menu.c
-'6  439  23  ~/os161/kern/conf/conf.kern
-'7  205  0  ~/os161/kern/conf/config
-'8  2  1  ~/os161/kern/startup/main.c
-'9  471  39  ~/os161/kern/startup/menu.c
+'0  74  0  ~/sos161/OS161/os161/kern/test/threadfun.c
+'1  1  0  ~/sos161/OS161/BS/1/all
+'2  232  13  ~/os161/kern/thread/synch.c
+'3  484  1  ~/os161/kern/thread/thread.c
+'4  220  11  ~/os161/kern/thread/synch.c
+'5  226  1  ~/os161/kern/thread/synch.c
+'6  143  0  ~/os161/kern/include/synch.h
+'7  226  1  ~/os161/kern/thread/synch.c
+'8  145  21  ~/os161/kern/include/synch.h
+'9  61  14  ~/os161/kern/thread/synch.c
 
 # Jumplist (newest first):
--'  44  5  ~/os161/kern/test/bathroom.c
--'  1  0  ~/os161/kern/test/bathroom.c
--'  28  1  ~/os161/kern/startup/menu.c
+-'  74  0  ~/sos161/OS161/os161/kern/test/threadfun.c
+-'  1  0  ~/sos161/OS161/os161/kern/test/threadfun.c
+-'  1  0  ~/sos161/OS161/BS/1/all
+-'  232  13  ~/os161/kern/thread/synch.c
+-'  1  0  ~/os161/kern/thread/synch.c
+-'  5  0  ~/os161/kern/thread/synch.c
+-'  484  1  ~/os161/kern/thread/thread.c
+-'  1  0  ~/os161/kern/thread/thread.c
+-'  220  11  ~/os161/kern/thread/synch.c
+-'  226  5  ~/os161/kern/thread/synch.c
+-'  143  0  ~/os161/kern/include/synch.h
+-'  1  0  ~/os161/kern/include/synch.h
+-'  145  21  ~/os161/kern/include/synch.h
+-'  61  14  ~/os161/kern/thread/synch.c
+-'  469  0  ~/os161/kern/thread/synch.c
+-'  614  0  ~/os161/kern/thread/synch.c
+-'  16  0  ~/compile/fullcompileASTT1
+-'  1  0  ~/compile/fullcompileASTT1
+-'  2  18  ~/compile/run_os
+-'  1  0  ~/compile/run_os
+-'  1  0  ~/kos161/OS-161-test/os161/kern/test/uw-tests.c
+-'  1  0  ~/compile/step_2
+-'  1  0  ~/compile/step_1
+-'  315  0  ~/os161/kern/synchprobs/catmouse.c
+-'  1  0  ~/os161/kern/synchprobs/catmouse.c
+-'  547  0  ~/os161/kern/synchprobs/catmouse.c
+-'  1530  0  ~/os161/kern/synchprobs/catmouse.c
+-'  1  0  ~/kos161/OS-161-test/os161/kern/include/proc.h
+-'  101  0  ~/kos161/OS-161-test/os161/kern/proc/proc.c
+-'  1  0  ~/kos161/OS-161-test/os161/kern/proc/proc.c
+-'  1  0  ~/os161/kern/proc/proc.c
+-'  89  10  ~/os161/kern/proc/proc.c
+-'  34  0  ~/os161/user/uw-testbin/pidcheck/pidcheck.c
+-'  1  0  ~/os161/user/uw-testbin/pidcheck/pidcheck.c
+-'  23  11  ~/os161/user/uw-testbin/onefork/onefork.c
+-'  1  0  ~/os161/user/uw-testbin/onefork/onefork.c
+-'  23  6  ~/os161/user/uw-testbin/widefork/widefork.c
+-'  1  0  ~/os161/user/uw-testbin/widefork/widefork.c
+-'  257  0  ~/os161/kern/proc/proc.c
+-'  100  0  ~/os161/kern/startup/menu.c
 -'  1  0  ~/os161/kern/startup/menu.c
--'  58  1  ~/os161/kern/startup/main.c
+-'  65  0  ~/os161/kern/syscall/proc_syscalls.c
+-'  1  0  ~/os161/kern/syscall/proc_syscalls.c
+-'  47  0  ~/os161/kern/syscall/file_syscalls.c
+-'  1  0  ~/os161/kern/syscall/file_syscalls.c
+-'  1108  0  ~/os161/kern/synchprobs/catmouse.c
+-'  78  0  ~/os161/kern/synchprobs/catmouse_synch.c
+-'  1  0  ~/os161/kern/synchprobs/catmouse_synch.c
+-'  489  25  ~/os161/kern/thread/synch.c
+-'  933  48  ~/os161/kern/thread/synch.c
+-'  1111  4  ~/os161/kern/thread/synch.c
+-'  43  2  ~/os161/kern/test/threadfun.c
+-'  1  0  ~/os161/kern/test/threadfun.c
+-'  13  3  ~/os161/kern/test/printcmd.c
+-'  1  0  ~/os161/kern/test/printcmd.c
+-'  29  13  ~/os161/kern/startup/menu.c
+-'  20  0  ~/os161/kern/startup/main.c
 -'  1  0  ~/os161/kern/startup/main.c
--'  531  0  ~/OS161-kernel/kern/startup/menu.c
--'  1  0  ~/OS161-kernel/kern/startup/menu.c
--'  498  20  ~/os161/kern/startup/menu.c
--'  29  0  ~/os161/kern/startup/menu.c
--'  35  12  ~/os161/kern/startup/menu.c
--'  439  23  ~/os161/kern/conf/conf.kern
--'  1  0  ~/os161/kern/conf/conf.kern
--'  205  0  ~/os161/kern/conf/config
--'  1  0  ~/os161/kern/conf/config
--'  2  1  ~/os161/kern/startup/main.c
--'  471  39  ~/os161/kern/startup/menu.c
--'  1  0  ~/OS161-kernel/kern/startup/hello.c
--'  1  0  ~/OS161-kernel/kern/include/hello.h
--'  336  0  ~/OS161-kernel/kern/conf/conf.kern
--'  1  0  ~/OS161-kernel/kern/conf/conf.kern
--'  99  1  ~/OS161-kernel/kern/startup/main.c
--'  1  0  ~/OS161-kernel/kern/startup/main.c
--'  1  60  ~/complete_cs161.txt
--'  1  0  ~/instructions.txt
--'  1  0  ~/testcompile/fullcompile
--'  15  16  ~/testcompile/fullcompile
--'  1  0  ~/testos161/fullcompile
--'  15  27  ~/testos161/fullcompile
--'  422  0  ~/os161/kern/conf/conf.kern
--'  388  24  ~/os161/kern/conf/conf.kern
--'  126  4  ~/os161/kern/startup/main.c
--'  101  2  ~/os161/kern/startup/main.c
--'  10  31  ~/os161/kern/startup/hello.c
+-'  274  0  ~/os161/kern/startup/main.c
+-'  412  0  ~/os161/kern/startup/main.c
+-'  552  0  ~/os161/kern/startup/main.c
+-'  8  0  ~/os161/kern/startup/hello.c
 -'  1  0  ~/os161/kern/startup/hello.c
--'  1  0  ~/compile/fullcompile
--'  323  42  ~/os161/kern/conf/conf.kern
--'  277  72  ~/os161/kern/conf/conf.kern
--'  105  11  ~/os161/kern/startup/main.c
--'  78  1  ~/os161/kern/startup/main.c
--'  77  64  ~/os161/kern/startup/main.c
--'  1  0  ~/main.c
--'  1  11  ~/compile/configure
--'  7  0  ~/compile/install
--'  1  0  ~/compile/install
--'  5  2  ~/compile/install
--'  75  0  ~/os161/kern/startup/main.c
--'  16  18  ~/compileOS
--'  1  0  ~/compileOS
--'  112  19  ~/os161/kern/startup/main.c
--'  9  12  ~/compileOS
--'  3  19  ~/instructions.txt
--'  3  54  ~/compileOS
--'  1  1  ~/makefile
--'  15  14  ~/makefile
--'  108  62  ~/os161/kern/startup/main.c
--'  23  19  ~/instructions.txt
--'  19  35  ~/instructions.txt
+-'  7  0  ~/os161/kern/include/test.h
+-'  1  0  ~/os161/kern/include/test.h
+-'  203  5  ~/os161/kern/include/synch.h
+-'  266  63  ~/os161/kern/include/synch.h
+-'  346  2  ~/os161/kern/include/synch.h
+-'  475  6  ~/os161/kern/include/synch.h
+-'  659  114  ~/os161/kern/include/synch.h
+-'  804  110  ~/os161/kern/include/synch.h
+-'  910  6  ~/os161/kern/include/synch.h
+-'  454  11  ~/os161/kern/conf/conf.kern
+-'  1  0  ~/os161/kern/conf/conf.kern
+-'  868  0  ~/os161/kern/conf/conf.kern
+-'  60  0  ~/README
 -'  1  0  ~/README
--'  79  0  ~/os161/kern/startup/main.c
--'  107  0  ~/os161/kern/startup/main.c
--'  111  0  ~/os161/kern/startup/main.c
--'  175  0  ~/os161/kern/startup/menu.c
--'  106  51  ~/os161/kern/startup/main.c
--'  106  0  ~/os161/kern/startup/menu.c
--'  76  72  ~/os161/kern/startup/main.c
--'  71  0  ~/os161/Makefile
--'  1  0  ~/os161/Makefile
--'  266  0  ~/os161/common/libc/printf/__printf.c
--'  1  0  ~/os161/common/libc/printf/__printf.c
--'  104  0  ~/os161/common/libc/arch/mips/setjmp.S
--'  1  0  ~/os161/common/libc/arch/mips/setjmp.S
--'  15  0  ~/os161/Makefile
--'  1  0  ~/os161/mankefile
--'  6  0  ~/README
--'  68  0  ~/README
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
--'  1  0  ~/os161/configure
--'  1  0  ~/Re
--'  1  0  ~/os161/configure
+-'  8  0  /etc/TESC/holodeck/sys161
+-'  1  0  ~/cleanOS/os161/kern/synchprobs/bowls.c
+-'  1  0  ~/cleanOS/os161/configure
+-'  1  0  ~/cleanOS/os161/kern/compile/ASST1/array.o
+-'  1  0  ~/cleanOS/testcompile/step_1
+-'  6  8  ~/cleanOS/testcompile/step_1
+-'  60  0  ~/cleanOS/os161/kern/syscall/file_syscalls.c
+-'  1  0  ~/cleanOS/os161/kern/syscall/file_syscalls.c
+-'  96  30  ~/cleanOS/os161/kern/syscall/file_syscalls.c
+-'  150  0  ~/cleanOS/os161/kern/startup/menu.c
+-'  1  0  ~/cleanOS/os161/kern/startup/menu.c
+-'  93  0  ~/cleanOS/os161/kern/syscall/proc_syscalls.c
+-'  1  0  ~/cleanOS/os161/kern/syscall/proc_syscalls.c
+-'  911  2  ~/cleanOS/os161/kern/startup/menu.c
+-'  8  18  ~/compile/step_2
+-'  9  0  ~/compile/step_1
+-'  1172  37  ~/os161/kern/startup/menu.c
+-'  1  0  ~/OS-161/compile/fullcompile
+-'  8  4  ~/OS-161/compile/step_1
+-'  1  0  ~/OS-161/compile/step_1
+-'  15  11  ~/OS-161/compile/fullcompile
+-'  232  13  ~/os161/kern/thread/synch.c
 
 # History of marks within files (newest to oldest):
 
+> ~/sos161/OS161/os161/kern/test/threadfun.c
+	"	74	0
+
+> ~/sos161/OS161/BS/1/all
+	"	1	0
+
+> ~/os161/kern/thread/synch.c
+	"	232	13
+	^	232	14
+	.	229	0
+	+	1318	306
+	+	1364	66
+	+	1380	14
+	+	1381	74
+	+	1363	2
+	+	1365	50
+	+	1403	13
+	+	1400	0
+	+	1400	94
+	+	1389	66
+	+	1390	23
+	+	1344	0
+	+	1318	432
+	+	1318	1
+	+	1318	55
+	+	1318	74
+	+	1318	87
+	+	1318	87
+	+	1318	118
+	+	1318	146
+	+	1318	159
+	+	1318	159
+	+	1318	206
+	+	1318	218
+	+	1318	218
+	+	1318	172
+	+	1318	172
+	+	1318	269
+	+	1318	282
+	+	1318	295
+	+	1318	296
+	+	1318	296
+	+	1318	318
+	+	1318	348
+	+	1318	375
+	+	1318	378
+	+	1318	383
+	+	1318	411
+	+	1318	411
+	+	1344	0
+	+	1343	0
+	+	1318	380
+	+	1319	0
+	+	1326	0
+	+	1326	0
+	+	1327	0
+	+	1326	0
+	+	1317	24
+	+	1318	0
+	+	1345	0
+	+	1354	20
+	+	1588	1
+	+	1565	1
+	+	1535	49
+	+	1534	1
+	+	1564	2
+	+	1588	0
+	+	1565	0
+	+	1565	0
+	+	1564	1
+	+	1534	0
+	+	1494	1
+	+	1588	94
+	+	1494	87
+	+	1167	295
+	+	933	48
+	+	700	0
+	+	469	0
+	+	25	1
+	+	24	1
+	+	23	1
+	+	226	1
+	+	226	17
+	+	226	1
+	+	226	1
+	+	226	1
+	+	226	1
+	+	9	0
+	+	220	10
+	+	9	0
+	+	226	5
+	+	226	1
+	+	235	0
+	+	227	0
+	+	228	51
+	+	228	51
+	+	229	0
+
+> ~/os161/kern/thread/thread.c
+	"	484	1
+
+> ~/os161/kern/include/synch.h
+	"	143	0
+	^	145	22
+	.	145	21
+	+	1028	69
+	+	1031	250
+	+	1031	247
+	+	1031	61
+	+	1031	98
+	+	1031	118
+	+	1031	132
+	+	1031	132
+	+	1031	134
+	+	1031	188
+	+	1031	202
+	+	1031	216
+	+	1031	216
+	+	1031	218
+	+	1031	237
+	+	1053	0
+	+	1051	12
+	+	1048	0
+	+	1050	19
+	+	1051	13
+	+	1052	70
+	+	1095	71
+	+	1047	171
+	+	1047	75
+	+	1047	56
+	+	1047	56
+	+	1047	75
+	+	1047	87
+	+	1047	171
+	+	1047	170
+	+	1032	690
+	+	1032	679
+	+	1032	574
+	+	1032	450
+	+	1032	497
+	+	1032	497
+	+	1032	428
+	+	1032	63
+	+	1032	33
+	+	1032	80
+	+	1032	190
+	+	1032	193
+	+	1032	303
+	+	1032	311
+	+	1032	314
+	+	1032	312
+	+	1028	3
+	+	1031	42
+	+	1047	32
+	+	1032	32
+	+	1027	68
+	+	1024	14
+	+	949	113
+	+	804	111
+	+	659	114
+	+	514	113
+	+	370	76
+	+	368	0
+	+	369	0
+	+	370	0
+	+	344	0
+	+	345	31
+	+	345	1
+	+	346	2
+	+	266	63
+	+	203	5
+	+	145	21
+
+> ~/compile/fullcompileASTT1
+	"	16	0
+
+> ~/compile/run_os
+	"	2	18
+	^	2	19
+	.	2	18
+	+	2	19
+	+	2	18
+
+> ~/kos161/OS-161-test/os161/kern/test/uw-tests.c
+	"	1	0
+
+> ~/compile/step_2
+	"	1	0
+	^	8	19
+	.	8	18
+	+	8	18
+
+> ~/notes
+	"	29	297
+	^	29	298
+	.	29	298
+	+	2	89
+	+	7	94
+	+	13	50
+	+	1	1
+	+	27	186
+	+	29	298
+
+> ~/compile/step_1
+	"	1	0
+	^	6	19
+	.	6	18
+	+	3	25
+	+	2	7
+	+	3	54
+	+	1	0
+	+	2	0
+	+	5	14
+	+	9	12
+	+	7	0
+	+	8	0
+	+	9	0
+	+	5	13
+	+	6	18
+
+> ~/os161/kern/synchprobs/catmouse.c
+	"	315	0
+	^	315	1
+	.	524	1
+	+	1530	0
+	+	1048	1
+	+	524	1
+
+> ~/kos161/OS-161-test/os161/kern/include/proc.h
+	"	1	0
+
+> ~/os161/kern/include/proc.h
+	"	104	20
+	^	104	21
+	.	104	20
+	+	166	20
+	+	104	20
+
+> ~/os161/kern/proc/proc.c
+	"	1	0
+	^	89	11
+	.	89	11
+	+	257	0
+	+	85	1
+	+	89	0
+	+	85	11
+	+	86	1
+	+	85	0
+	+	86	1
+	+	89	11
+
+> ~/kos161/OS-161-test/os161/kern/proc/proc.c
+	"	101	0
+
+> ~/os161/user/uw-testbin/pidcheck/pidcheck.c
+	"	34	0
+	^	34	1
+	.	34	0
+	+	34	0
+
+> ~/os161/user/uw-testbin/onefork/onefork.c
+	"	23	11
+	^	23	12
+	.	26	0
+	+	26	0
+
+> ~/os161/user/uw-testbin/widefork/widefork.c
+	"	23	6
+	^	23	7
+	.	65	0
+	+	65	0
+
+> ~/os161/kern/startup/menu.c
+	"	100	0
+	^	100	0
+	.	100	0
+	+	1072	31
+	+	1072	5
+	+	1187	0
+	+	1150	42
+	+	1171	20
+	+	1151	0
+	+	1171	25
+	+	1172	0
+	+	1171	2
+	+	1172	37
+	+	602	0
+	+	100	0
+
+> ~/os161/kern/syscall/proc_syscalls.c
+	"	65	0
+	^	65	1
+	.	65	0
+	+	65	0
+
+> ~/os161/kern/syscall/file_syscalls.c
+	"	47	0
+	^	47	1
+	.	47	0
+	+	47	0
+
+> ~/os161/kern/synchprobs/catmouse_synch.c
+	"	78	0
+	^	78	0
+	.	77	1
+	+	77	1
+
+> ~/os161/kern/test/threadfun.c
+	"	43	2
+	^	43	3
+	.	161	0
+	+	161	0
+
+> ~/os161/kern/test/printcmd.c
+	"	13	3
+	^	13	4
+	.	13	3
+	+	13	3
+
+> ~/os161/kern/startup/main.c
+	"	20	0
+	^	20	0
+	.	134	0
+	+	627	72
+	+	628	64
+	+	1	0
+	+	1	0
+	+	1	0
+	+	553	0
+	+	627	72
+	+	626	74
+	+	661	57
+	+	660	0
+	+	659	92
+	+	657	52
+	+	659	73
+	+	628	117
+	+	661	19
+	+	659	13
+	+	629	0
+	+	604	18
+	+	656	12
+	+	604	17
+	+	652	4
+	+	659	13
+	+	652	3
+	+	607	9
+	+	607	18
+	+	606	6
+	+	659	6
+	+	657	3
+	+	661	20
+	+	662	1
+	+	658	0
+	+	657	2
+	+	662	0
+	+	659	2
+	+	660	2
+	+	661	2
+	+	652	10
+	+	664	19
+	+	552	0
+	+	412	0
+	+	274	0
+	+	36	116
+	+	38	0
+	+	37	0
+	+	36	4
+	+	37	3
+	+	38	18
+	+	135	0
+	+	41	5
+	+	40	11
+	+	42	5
+	+	40	28
+	+	134	0
+
+> ~/os161/kern/startup/hello.c
+	"	8	0
+	^	8	1
+	.	8	0
+	+	1	16
+	+	10	0
+	+	15	0
+	+	11	0
+	+	14	29
+	+	14	37
+	+	1	17
+	+	9	32
+	+	1	0
+	+	1	30
+	+	10	17
+	+	10	0
+	+	1	0
+	+	11	13
+	+	14	31
+	+	11	4
+	+	9	0
+	+	8	0
+
+> ~/os161/kern/include/test.h
+	"	7	0
+	^	7	0
+	.	66	20
+	+	125	53
+	+	66	20
+
+> ~/os161/kern/conf/conf.kern
+	"	454	11
+	^	454	12
+	.	454	0
+	+	730	28
+	+	731	9
+	+	730	9
+	+	730	48
+	+	730	0
+	+	773	74
+	+	773	42
+	+	773	66
+	+	773	91
+	+	773	25
+	+	773	49
+	+	773	74
+	+	839	24
+	+	774	0
+	+	776	0
+	+	868	642
+	+	868	634
+	+	868	1
+	+	454	0
+
+> ~/README
+	"	60	0
+
+> ~/cleanOS/os161/kern/synchprobs/bowls.c
+	"	1	0
+
+> ~/cleanOS/os161/configure
+	"	1	0
+
+> ~/cleanOS/testcompile/step_1
+	"	6	4
+	^	6	5
+	.	6	4
+	+	2	21
+	+	3	39
+	+	5	13
+	+	6	4
+
+> ~/cleanOS/os161/kern/compile/ASST1/array.o
+	"	1	0
+
+> ~/cleanOS/os161/kern/syscall/file_syscalls.c
+	"	60	0
+	^	60	1
+	.	60	0
+	+	237	0
+	+	119	0
+	+	60	0
+
+> ~/cleanOS/os161/kern/startup/menu.c
+	"	150	0
+	^	150	0
+	.	720	548
+	+	911	3
+	+	720	548
+
+> ~/cleanOS/os161/kern/syscall/proc_syscalls.c
+	"	93	0
+	^	93	0
+	.	92	1
+	+	92	1
+
+> ~/OS-161/compile/fullcompile
+	"	1	0
+	^	15	12
+	.	15	11
+	+	10	16
+	+	13	10
+	+	14	11
+	+	15	11
+
+> ~/OS-161/compile/step_1
+	"	8	4
+	^	8	5
+	.	3	32
+	+	2	15
+	+	3	32
+
+> ~/OS-161-test-Some-Tree/compile/fullcompile
+	"	10	14
+	^	10	15
+	.	10	15
+	+	5	13
+	+	6	18
+	+	10	15
+
+> ~/OS161-kernel/common/libc/printf/__printf.c
+	"	1	0
+
+> ~/testcompile/step_1
+	"	6	18
+	^	6	19
+	.	6	18
+	+	2	20
+	+	3	38
+	+	5	13
+	+	6	18
+
+> ~/testcompile/fullcompileASTT01
+	"	16	18
+	^	16	19
+	.	16	18
+	+	3	38
+	+	2	20
+	+	10	20
+	+	13	16
+	+	15	16
+	+	5	13
+	+	16	18
+
+> ~/OS161-kernel/kern/thread/synch.c
+	"	28	1
+
+> ~/OS161-kernel/kern/include/thread.h
+	"	5	1
+
+> ~/os161/kern/include/thread.h
+	"	144	16
+
+> ~/os161/kern/include/cdefs.h
+	"	109	1
+
+> ~/OS161-kernel/kern/include/cdefs.h
+	"	109	1
+
+> ~/OS161-kernel/kern/include/spinlock.h
+	"	56	1
+
+> ~/os161/kern/include/spinlock.h
+	"	28	1
+
+> ~/OS161-kernel/kern/include/synch.h
+	"	161	6
+
+> ~/compile/fullcompile
+	"	1	0
+
+> ~/OS161-kernel/kern/include/synch.c
+	"	1	0
+
+> ~/instructions.txt
+	"	1	0
+	^	3	20
+	.	3	19
+	+	16	0
+	+	12	13
+	+	19	35
+	+	23	19
+	+	4	0
+	+	1	46
+	+	4	0
+	+	3	19
+
+> ~/os161/kern/include/symch.h
+	"	1	0
+
+> ~/compile/fullcompileASTT01
+	"	16	18
+	^	16	19
+	.	16	18
+	+	5	13
+	+	6	18
+	+	16	18
+
 > ~/os161/kern/test/bathroom.c
-	"	44	5
-	^	44	6
-	.	44	5
+	"	192	15
+	^	192	16
+	.	192	15
 	+	1	49
 	+	1	339
 	+	1	14
 	+	1	9
 	+	1	9
 	+	1	9
-	+	4	0
+	+	1	0
 	+	1	18
-	+	4	0
-	+	16	1
-	+	24	1
-	+	42	1
-	+	44	5
-
-> ~/os161/kern/startup/hello.c
-	"	1	0
-	^	1	0
-	.	2	0
-	+	1	16
-	+	3	0
-	+	8	0
-	+	4	0
-	+	7	29
-	+	7	37
-	+	1	17
-	+	2	32
 	+	1	0
 	+	1	30
-	+	3	17
-	+	3	0
+	+	1	144
+	+	1	502
+	+	1	581
 	+	1	0
-	+	4	13
-	+	7	31
-	+	4	4
-	+	2	0
-
-> ~/os161/kern/startup/menu.c
-	"	28	1
-	^	498	21
-	.	550	18
-	+	471	31
-	+	471	5
-	+	585	0
-	+	550	18
-
-> ~/os161/kern/startup/main.c
-	"	58	1
-	^	16	2
-	.	113	19
-	+	76	72
-	+	77	64
-	+	1	0
-	+	1	0
+	+	1	15
+	+	236	0
+	+	232	0
+	+	232	0
+	+	230	18
+	+	231	15
+	+	6	0
+	+	4	21
 	+	1	0
 	+	2	0
-	+	76	72
-	+	75	74
-	+	110	57
-	+	109	0
-	+	108	92
-	+	106	52
-	+	108	73
-	+	77	117
-	+	110	19
-	+	108	13
-	+	78	0
-	+	53	18
-	+	105	12
-	+	53	17
-	+	101	4
-	+	108	13
-	+	101	3
-	+	56	9
-	+	56	18
-	+	55	6
-	+	108	6
-	+	106	3
-	+	110	20
-	+	111	1
-	+	107	0
-	+	106	2
-	+	111	0
-	+	108	2
-	+	109	2
-	+	110	2
-	+	101	10
-	+	113	19
+	+	229	6
+	+	47	1
+	+	175	0
+	+	168	1
+	+	220	1
+	+	193	1
+	+	178	18
+	+	173	0
+	+	172	0
+	+	169	1
+	+	172	1
+	+	176	30
+	+	178	19
+	+	191	103
+	+	193	0
+	+	191	79
+	+	193	0
+	+	191	1
+	+	189	0
+	+	188	0
+	+	187	0
+	+	186	0
+	+	184	0
+	+	183	0
+	+	181	0
+	+	180	0
+	+	179	1
+	+	180	0
+	+	181	0
+	+	183	1
+	+	184	0
+	+	186	0
+	+	187	0
+	+	188	0
+	+	189	0
+	+	191	1
+	+	190	0
+	+	185	0
+	+	182	0
+	+	176	28
+	+	187	1
+	+	188	1
+	+	183	2
+	+	194	0
+	+	193	1
+	+	192	15
+
+> ~/os161/kern/synchprobs/bathroom.c
+	"	191	8
+	^	1	1
+	.	1	0
+	+	1	0
+
+> ~/os161/kern/test/synchtest.c
+	"	134	0
+	^	134	0
+	.	134	0
+	+	130	37
+	+	133	0
+	+	131	0
+	+	129	1
+	+	134	109
+	+	134	0
+
+> ~/os161/kern/compile/ASST0/synchtest.o
+	"	1	0
+
+> ~/OS161-kernel/kern/synchprobs/bathroom.c
+	"	9	1
+
+> ~/OS161-kernel/kern/include/test.h
+	"	1	0
+	^	1	4
+	.	1	3
+	+	1	3
 
 > ~/OS161-kernel/kern/startup/menu.c
-	"	531	0
+	"	549	0
 	^	531	1
 	.	531	1
 	+	531	1
 
-> ~/os161/kern/conf/conf.kern
-	"	439	23
-	^	439	24
-	.	439	23
-	+	277	28
-	+	278	9
-	+	277	9
-	+	277	48
-	+	277	0
-	+	320	74
-	+	320	42
-	+	320	66
-	+	320	91
-	+	320	25
-	+	320	49
-	+	320	74
-	+	386	24
-	+	321	0
-	+	323	0
-	+	440	23
-	+	439	23
+> ~/os161/user/testbin/badcall/test.h
+	"	82	0
+
+> ~/os161/kern/test/arraytest.c
+	"	87	0
+
+> ~/os161/kern/include/hello.h
+	"	1	0
+	^	1	17
+	.	1	16
+	+	1	16
+
+> ~/os161/kern/include/bathroom.h
+	"	1	19
+	^	1	20
+	.	1	19
+	+	1	19
+
+> ~/os161/kern/compile/ASST0/files.mk
+	"	91	28
 
 > ~/OS161-kernel/kern/test/tt3.c
 	"	27	14
@@ -294,9 +917,6 @@
 
 > ~/os161/root/bin/pwd
 	"	1	0
-
-> ~/os161/kern/proc/proc.c
-	"	28	1
 
 > ~/os161/kern/conf/config
 	"	1	0
@@ -330,24 +950,8 @@
 > ~/OS161-kernel/kern/startup/hello.c
 	"	1	0
 
-> ~/compile/run_os
-	"	1	0
-	^	1	0
-	.	2	0
-	+	2	19
-	+	2	0
-
-> ~/compile/fullcompile
-	"	1	0
-
 > ~/OS161-kernel/kern/include/hello.h
 	"	1	0
-
-> ~/os161/kern/include/hello.h
-	"	1	16
-	^	1	17
-	.	1	16
-	+	1	16
 
 > ~/OS161-kernel/kern/conf/conf.kern
 	"	336	0
@@ -360,19 +964,6 @@
 	^	1	61
 	.	1	0
 	+	1	0
-
-> ~/instructions.txt
-	"	1	0
-	^	3	20
-	.	3	19
-	+	16	0
-	+	12	13
-	+	19	35
-	+	23	19
-	+	4	0
-	+	1	46
-	+	4	0
-	+	3	19
 
 > ~/testcompile/fullcompile
 	"	1	0
@@ -391,27 +982,6 @@
 	+	10	30
 	+	13	27
 	+	15	27
-
-> ~/compile/step_2
-	"	8	18
-	^	8	19
-	.	8	18
-	+	8	18
-
-> ~/compile/step_1
-	"	1	0
-	^	9	1
-	.	9	0
-	+	3	25
-	+	2	7
-	+	3	54
-	+	1	0
-	+	2	0
-	+	5	14
-	+	9	12
-	+	7	0
-	+	8	0
-	+	9	0
 
 > ~/main.c
 	"	1	0
@@ -459,9 +1029,6 @@
 	+	1	0
 	+	1	6
 	+	1	1
-
-> ~/README
-	"	1	0
 
 > ~/os161/Makefile
 	"	71	0

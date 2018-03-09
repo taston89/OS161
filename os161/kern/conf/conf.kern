@@ -320,7 +320,6 @@ file      ../common/libc/string/strtok_r.c
 #
 
 file      thread/clock.c
-
 # UW Mod
 # file      thread/proc.c
 file      proc/proc.c
@@ -336,11 +335,11 @@ file      thread/threadlist.c
 #
 
 file      vm/kmalloc.c
-# UW Mod
-defoption vm
-optfile   vm   vm/vm.c
-
-optofffile dumbvm   vm/addrspace.c
+file      vm/uw-vmstats.c
+# UW Mod - no longer used
+#defoption vm
+#optfile   vm   vm/vm.c
+# optofffile dumbvm   vm/addrspace.c
 
 #
 # Network
@@ -376,6 +375,9 @@ file      vfs/devnull.c
 file      syscall/loadelf.c
 file      syscall/runprogram.c
 file      syscall/time_syscalls.c
+# UW additions
+file      syscall/proc_syscalls.c
+file      syscall/file_syscalls.c
 
 #
 # Startup and initialization
@@ -383,7 +385,8 @@ file      syscall/time_syscalls.c
 
 file      startup/main.c
 file      startup/menu.c
-file      startup/hello.c
+file		 startup/hello.c
+
 ########################################
 #                                      #
 #             Filesystems              #
@@ -420,7 +423,7 @@ defoption synchprobs
 optfile   synchprobs  synchprobs/whalemating.c
 # UW Mod
 optfile   synchprobs  synchprobs/catmouse.c
-optfile   synchprobs  synchprobs/bowls.c
+optfile   synchprobs  synchprobs/catmouse_synch.c
 
 
 ########################################
@@ -436,7 +439,9 @@ file		test/tt3.c
 file		test/synchtest.c
 file		test/malloctest.c
 file		test/fstest.c
-file     test/bathroom.c
+file 		test/messagetest.c
+file		test/threadfun.c
+
 optfile net	test/nettest.c
 # UW Mod
 file    test/uw-tests.c
@@ -446,8 +451,6 @@ file    test/uw-tests.c
 defoption A0
 defoption A1
 defoption A2
-# UW For A3 use the stats tracking code provided
 defoption A3
-   file    vm/uw-vmstats.c
 defoption A4
 defoption A5

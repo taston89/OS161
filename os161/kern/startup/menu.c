@@ -37,6 +37,7 @@
 #include <clock.h>
 #include <thread.h>
 #include <proc.h>
+#include <synch.h>
 #include <vfs.h>
 #include <sfs.h>
 #include <syscall.h>
@@ -151,10 +152,11 @@ common_prog(int nargs, char **args)
 		return result;
 	}
 
-	/*
-	 * The new process will be destroyed when the program exits...
-	 * once you write the code for handling that.
-	 */ 
+#ifdef UW
+	/* wait until the process we have just launched - and any others that it 
+	   may fork - is finished before proceeding */
+	P(no_proc_sem);
+#endif // UW
 
 	return 0;
 }
@@ -449,85 +451,93 @@ cmd_opsmenu(int n, char **a)
 	return 0;
 }
 
-static const char *testmenu[] = {
-	"[at]  Array test                    ",
-	"[bt]  Bitmap test                   ",
-	"[km1] Kernel malloc test            ",
-	"[km2] kmalloc stress test           ",
-	"[tt1] Thread test 1                 ",
-	"[tt2] Thread test 2                 ",
-	"[tt3] Thread test 3                 ",
+	static const char *testmenu[] = {
+		"[at]  Array test                    ",
+		"[bt]  Bitmap test                   ",
+		"[km1] Kernel malloc test            ",
+		"[km2] kmalloc stress test           ",
+		"[tt1] Thread test 1                 ",
+		"[tt2] Thread test 2                 ",
+		"[tt3] Thread test 3                 ",
+		"[ftt] Fun thread test					 ",
+		"[utt] Unsafe thread test				 ",
+		"[ltt] Lock thread test					 ",
+		"[slt] Spinlock thread test			 ",
+		"[msg] Message test						 ",
 #if OPT_NET
-	"[net] Network test                  ",
+		"[net] Network test                  ",
 #endif
-	"[sy1] Semaphore test                ",
-	"[sy2] Lock test             (1)     ",
-	"[sy3] CV test               (1)     ",
-	"[fs1] Filesystem test               ",
-	"[fs2] FS read stress        (4)     ",
-	"[fs3] FS write stress       (4)     ",
-	"[fs4] FS write stress 2     (4)     ",
-	"[fs5] FS create stress      (4)     ",
-	"[br1] Bathroom test      (1)       ", //Added lab4
-	NULL
-};
-
-static
-int
-cmd_testmenu(int n, char **a)
-{
-	(void)n;
-	(void)a;
-
-	showmenu("OS/161 tests menu", testmenu);
-	kprintf("    (1) These tests will fail until you finish the "
-		"synch assignment.\n");
-	kprintf("    (4) These tests may fail until you finish the "
-		"file system assignment.\n");
-	kprintf("\n");
-
-	return 0;
-}
-
-static const char *mainmenu[] = {
-	"[?o] Operations menu                ",
-	"[?t] Tests menu                     ",
-#if OPT_SYNCHPROBS
-	"[sp1] Whale Mating                  ",
+		"[sy1] Semaphore test                ",
+		"[sy2] Lock test             (1)     ",
+		"[sy3] CV test               (1)     ",
 #ifdef UW
-	"[sp2] Cat/mouse                     ",
+		"[uw1] UW lock test          (1)     ",
+		"[uw2] UW vmstats test       (3)     ",
+#endif // UW
+		"[fs1] Filesystem test               ",
+		"[fs2] FS read stress        (4)     ",
+		"[fs3] FS write stress       (4)     ",
+		"[fs4] FS write stress 2     (4)     ",
+		"[fs5] FS create stress      (4)     ",
+		NULL
+	};
+
+	static
+	int
+	cmd_testmenu(int n, char **a)
+	{
+		(void)n;
+		(void)a;
+
+		showmenu("OS/161 tests menu", testmenu);
+		kprintf("    (1) These tests will fail until you finish the "
+			"synch assignment.\n");
+		kprintf("    (4) These tests may fail until you finish the "
+			"file system assignment.\n");
+		kprintf("\n");
+
+		return 0;
+	}
+
+	static const char *mainmenu[] = {
+		"[?o] Operations menu                ",
+		"[?t] Tests menu                     ",
+#if OPT_SYNCHPROBS
+		"[sp1] Whale Mating                  ",
+#ifdef UW
+		"[sp2] Cat/mouse                     ",
 #endif /* UW */
 #endif
-	"[kh] Kernel heap stats              ",
-	"[q] Quit and shut down              ",
-	NULL
-};
+		"[kh] Kernel heap stats              ",
+		"[q] Quit and shut down              ",
+		NULL
+	};
 
-static
-int
-cmd_mainmenu(int n, char **a)
-{
-	(void)n;
-	(void)a;
+	static
+	int
+	cmd_mainmenu(int n, char **a)
+	{
+		(void)n;
+		(void)a;
 
-	showmenu("OS/161 kernel menu", mainmenu);
-	return 0;
-}
+		showmenu("OS/161 kernel menu", mainmenu);
+		return 0;
+	}
 
-////////////////////////////////////////
-//
-// Command table.
+	////////////////////////////////////////
+	//
+	// Command table.
 
-static struct {
-	const char *name;
-	int (*func)(int nargs, char **args);
-} cmdtable[] = {
-	/* menus */
-	{ "?",		cmd_mainmenu },
-	{ "h",		cmd_mainmenu },
-	{ "help",	cmd_mainmenu },
-	{ "?o",		cmd_opsmenu },
-	{ "?t",		cmd_testmenu },
+	static struct {
+		const char *name;
+		int (*func)(int nargs, char **args);
+	} cmdtable[] = {
+		/* menus */
+		{ "?",		cmd_mainmenu },
+		{ "h",		cmd_mainmenu },
+		{ "help",	cmd_mainmenu },
+		{ "?o",		cmd_opsmenu },
+		{ "?t",		cmd_testmenu },
 
 	/* operations */
 	{ "s",		cmd_shell },
@@ -547,7 +557,6 @@ static struct {
 #if OPT_SYNCHPROBS
 	/* in-kernel synchronization problem(s) */
 	{ "sp1",	whalemating },
-	{ "br1", bathroom },
 #ifdef UW
 	{ "sp2",	catmouse },
 #endif /* UW */
@@ -561,12 +570,17 @@ static struct {
 	{ "bt",		bitmaptest },
 	{ "km1",	malloctest },
 	{ "km2",	mallocstress },
+	{ "msg", messagetest },
 #if OPT_NET
 	{ "net",	nettest },
 #endif
 	{ "tt1",	threadtest },
 	{ "tt2",	threadtest2 },
 	{ "tt3",	threadtest3 },
+	{ "ftt", funtest },
+	{ "utt", unsafethreadcounter },
+	{ "ltt", lockthreadcounter },
+	{ "slt", spinlockthreadcounter },
 	{ "sy1",	semtest },
 
 	/* synchronization assignment tests */
@@ -574,6 +588,7 @@ static struct {
 	{ "sy3",	cvtest },
 #ifdef UW
 	{ "uw1",	uwlocktest1 },
+	{ "uw2",	uwvmstatstest },
 #endif
 
 	/* file system assignment tests */

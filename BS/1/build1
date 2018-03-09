@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/os161/
+pmake
+pmake install

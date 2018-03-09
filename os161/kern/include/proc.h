@@ -41,12 +41,16 @@
 
 struct addrspace;
 struct vnode;
+#ifdef UW
+struct semaphore;
+#endif // UW
 
 /*
  * Process structure.
  */
 struct proc {
 	char *p_name;			/* Name of this process */
+	pid_t pid;
 	struct spinlock p_lock;		/* Lock for this structure */
 	struct threadarray p_threads;	/* Threads in this process */
 
@@ -56,17 +60,36 @@ struct proc {
 	/* VFS */
 	struct vnode *p_cwd;		/* current working directory */
 
+#ifdef UW
+  /* a vnode to refer to the console device */
+  /* this is a quick-and-dirty way to get console writes working */
+  /* you will probably need to change this when implementing file-related
+     system calls, since each process will need to keep track of all files
+     it has opened, not just the console. */
+  struct vnode *console;                /* a vnode for the console device */
+#endif
+
 	/* add more material here as needed */
+	pid_t p_pid;
+	pid_t pp_pid;
+	struct prroc *p_pproc;
 };
 
 /* This is the process structure for the kernel and for kernel-only threads. */
 extern struct proc *kproc;
+
+/* Semaphore used to signal when there are no more processes */
+#ifdef UW
+extern struct semaphore *no_proc_sem;
+#endif // UW
 
 /* Call once during system startup to allocate data structures. */
 void proc_bootstrap(void);
 
 /* Create a fresh process for use by runprogram(). */
 struct proc *proc_create_runprogram(const char *name);
+
+struct proc *proc_create_fork(const char *name);
 
 /* Destroy a process. */
 void proc_destroy(struct proc *proc);

@@ -1,8 +1,10 @@
 #include <types.h>
 #include <lib.h>
-#include <hello.h>
-void hello()
-{
+#include <test.h>
 
-	kprintf("\n\nHello World\n\n");
+void Hello(){
+	extern const int buildversion;
+	extern const char buildconfig[];
+
+	kprintf("\n\nWelcome to %s: v%d.\n\n", buildconfig, buildversion);
 }

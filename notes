@@ -1,0 +1,29 @@
+removed some stuff for bathroom test from menu.c, and am trying to match semtest to get it working.
+I've added bathroom to test.h, and copied semtest in synchtest.c to try to get it to work
+
+to find all text within all files use
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+
+I added bathroom.c kern/syncprobs and got rid of most of the content to make it just say test.
+
+
+
+Working on lab 6 I got an example of the locks at https://chrisrecalis.wordpress.com/2011/11/09/locks/
+But it is not working
+The files that I'm working in are synch.h & synch.c
+
+Copied the entirity of the synch.c and synch.h files from the completed OS161 folders, but getting an error on 
+some lines in synch.c saying 
+../../thread/synch.c:377: error: dereferencing pointer to incomplete type
+../../thread/synch.c:377: error: dereferencing pointer to incomplete type
+../../thread/synch.c: In function ‘rw_release’:
+../../thread/synch.c:415: error: dereferencing pointer to incomplete type
+../../thread/synch.c:415: error: dereferencing pointer to incomplete type
+ 
+When I comment out these sections the OS works correctly and compiles, but when I do a lock test it only takes 1sec
+and then the lock test will freeze if run again, I think it is because the locks are not releasing, which makes
+sense as to why it is going so fast as well.
+
+Started copying the files from the OS161 complete version, but I don't even know if this is fully functioning because when I tried to run the os from the complete copy, it isn't working.
+
+kept getting errors on normal os161, took classmates and made it work, still don't know if the locks are working correctly, but it is under kos161, and the compile scripts needs to be corrected, or it just needs to be moved up, also need to fix the group name again, and maybe the cmd test program.

@@ -50,10 +50,8 @@
 #include <test.h>
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
-#include <hello.h>
 
-//Lab 3
-#include "opt-A0.h"
+
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -72,9 +70,9 @@ extern const char buildconfig[];
  */
 static const char harvard_copyright[] =
     "Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009\n"
-    "   President and Fellows of Harvard College.  All rights reserved.\n"
-	 " Version edited by Tim Aston SOS Fall 2017 Evergreen State College\n"
-	 " Code edited by Tim Aston SOS Fall Evergreen State College\n";
+    "   President and Fellows of Harvard College.  All rights reserved.\n";
+
+
 /*
  * Initial boot sequence.
  */
@@ -98,22 +96,23 @@ boot(void)
 	 * anything at all. You can make it larger though (it's in
 	 * dev/generic/console.c).
 	 */
-   hello();
+
 	kprintf("\n");
 	kprintf("OS/161 base system version %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
-  
-	/* /*THIS IS SOMETHING I ADDED FOR LAB 3!!!!!!!!!!*/
-	//#if OPT_A0
-	//	hello();//added _ to see if that would make it a system call
-	//#endif /* OPT_A0 */
+	
+	kprintf(" #######   #####     #     #####     #   \n");
+	kprintf(" #     #  #     #   ##    #     #   ##   \n");
+	kprintf(" #     #  #        # #    #        # #   \n");
+	kprintf(" #     #   #####     #    ######     #   \n");
+	kprintf(" #     #        #    #    #     #    #   \n");
+	kprintf(" #     #  #     #    #    #     #    #   \n");
+	kprintf(" #######   #####   #####   #####   ##### \n"); 
 
-
-	kprintf("Edited by Tim Aston SOS Fall 2017 Evergreen State College system version %s (%s #%d)\n", 
+	kprintf("\nSam's system version %s (%s #%d)", 
 		GROUP_VERSION, buildconfig, buildversion);
-	kprintf("\n");
-
+	Hello();
 	/* Early initialization. */
 	ram_bootstrap();
 	proc_bootstrap();

@@ -1,4 +1,4 @@
-/*
+/*int sys_fork(pid_t *pid);*
  * Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009
  *	The President and Fellows of Harvard College.
  *
@@ -40,7 +40,7 @@
 
 
 /* Flags word for DEBUG() macro. */
-uint32_t dbflags = 0;
+uint32_t dbflags = 0; //DB_SYSCALL;
 
 /* Lock for non-polled kprintfs */
 static struct lock *kprintf_lock;

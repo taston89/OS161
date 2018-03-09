@@ -34,7 +34,6 @@
  *
  * Just calls the sync() system call.
  */
-
 int
 main()
 {
